@@ -35,6 +35,6 @@ public class UserController {
     public UserModel updateUser(@RequestBody UserModel user){return userService.updateUser(user);}
 
     @GetMapping("/delete")
-    public void deleteUser(@RequestBody int id){userService.findById(id);}
+    public void deleteUser(@RequestBody long id){userService.deleteUser(id);}
 
 }
