@@ -9,8 +9,6 @@ import java.util.Date;
 public class UserModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
     @Column
     private String username;
     @Column
@@ -33,8 +31,7 @@ public class UserModel {
     public UserModel() {
     }
 
-    public UserModel(int id, String username, String password, String email, String firstName, String lastName, Date birthday, String description, int number_of_matches, String note) {
-        this.id=id;
+    public UserModel(String username, String password, String email, String firstName, String lastName, Date birthday, String description, int number_of_matches, String note) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -46,13 +43,6 @@ public class UserModel {
         this.note = note;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
