@@ -30,10 +30,13 @@ public class UserModel {
     @Column
     private String note;
 
+    @Column
+    private boolean administrator;
+
     public UserModel() {
     }
 
-    public UserModel(int id, String username, String password, String email, String firstName, String lastName, Date birthday, String description, int number_of_matches, String note) {
+    public UserModel(int id, String username, String password, String email, String firstName, String lastName, Date birthday, String description, int number_of_matches, String note, boolean administrator) {
         this.id=id;
         this.username = username;
         this.password = password;
@@ -44,6 +47,7 @@ public class UserModel {
         this.description = description;
         this.number_of_matches = number_of_matches;
         this.note = note;
+        this.administrator=administrator;
     }
 
     public int getId() {
@@ -124,5 +128,13 @@ public class UserModel {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public boolean isAdministrator() {
+        return administrator;
+    }
+
+    public void setAdministrator(boolean administrator) {
+        this.administrator = administrator;
     }
 }
