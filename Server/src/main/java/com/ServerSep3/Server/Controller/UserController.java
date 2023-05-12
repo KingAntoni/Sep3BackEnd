@@ -26,7 +26,7 @@ public class UserController {
         return userService.findById(id);
     }
 
-    @PostMapping("/save")
+    @PostMapping("/save")//Register?
     public UserModel saveUser(@RequestBody UserModel user) {
         return userService.saveUser(user);
     }
@@ -36,5 +36,12 @@ public class UserController {
 
     @GetMapping("/delete")
     public void deleteUser(@RequestBody long id){userService.deleteUser(id);}
+
+   /*
+   @PostMapping("/login")
+    public UserModel loginUser(@RequestBody LoginModel login) {
+        return userService.validateUser(login);
+    }
+    */
 
 }
