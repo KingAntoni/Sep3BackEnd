@@ -12,11 +12,14 @@ public class EventModel {
     private String description;
     @Column
     private String title;
+    @Column
+    private int madeById;
 
-    public EventModel(int id, String description, String title) {
+    public EventModel(int id, String description, String title, int madeById) {
         this.id = id;
         this.description = description;
         this.title = title;
+        this.madeById = madeById;
     }
 
     public EventModel() {
@@ -44,5 +47,13 @@ public class EventModel {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getMadeById() {
+        return madeById;
+    }
+
+    public void setMadeById(int madeById) {
+        this.madeById = madeById;
     }
 }
