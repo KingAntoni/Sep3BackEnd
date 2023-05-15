@@ -11,4 +11,6 @@ public interface MatchService {
     MatchModel updateMatch(MatchModel matchModel);
     void deleteMatch(Long id);
     List<MatchModel> findByUserId(int id);
+
+    boolean isMatch(MatchModel matchModel);
 }

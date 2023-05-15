@@ -23,6 +23,9 @@ public class MatchServiceImpl implements MatchService {
     @Override
     public MatchModel updateMatch(MatchModel matchModel) {
         matchRepository.deleteById(Long.valueOf(matchModel.getId()));
+        if(isMatch(matchModel)){
+            matchModel.setMatch(true);
+        }
         return matchRepository.save(matchModel);
     }
 
@@ -40,4 +43,15 @@ public class MatchServiceImpl implements MatchService {
         resultList.addAll(list2);
         return resultList;
     }
+
+    @Override
+    public boolean isMatch(MatchModel matchModel) {
+        Boolean match1= matchModel.getMatchUser1();
+        Boolean match2= matchModel.getMatchUser2();
+        if(match1 & match2){
+            return true;
+        }
+        return false;
+    }
+
 }
