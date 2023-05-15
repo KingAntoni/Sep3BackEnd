@@ -7,20 +7,20 @@ import jakarta.persistence.*;
 public class MatchModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int matchId;
+    private int id;
     @Column
     private int userId1;
-    @Column
-    private boolean matchUser1;
+    @Column(nullable = true)
+    private Boolean matchUser1;
     @Column
     private int userId2;
-    @Column
-    private boolean matchUser2;
-    @Column
-    private boolean match;
+    @Column(nullable = true)
+    private Boolean matchUser2;
+    @Column(nullable = true)
+    private Boolean match;
 
-    public MatchModel(int matchId, int userId1, boolean matchUser1, int userId2, boolean matchUser2, boolean match) {
-        this.matchId = matchId;
+    public MatchModel(int id, int userId1, Boolean matchUser1, int userId2, Boolean matchUser2, Boolean match) {
+        this.id = id;
         this.userId1 = userId1;
         this.matchUser1 = matchUser1;
         this.userId2 = userId2;
@@ -31,12 +31,12 @@ public class MatchModel {
     public MatchModel() {
     }
 
-    public int getMatchId() {
-        return matchId;
+    public int getId() {
+        return id;
     }
 
-    public void setMatchId(int matchId) {
-        this.matchId = matchId;
+    public void setId(int Id) {
+        this.id = Id;
     }
 
     public int getUserId1() {
@@ -47,11 +47,11 @@ public class MatchModel {
         this.userId1 = userId1;
     }
 
-    public boolean isMatchUser1() {
+    public Boolean getMatchUser1() {
         return matchUser1;
     }
 
-    public void setMatchUser1(boolean matchUser1) {
+    public void setMatchUser1(Boolean matchUser1) {
         this.matchUser1 = matchUser1;
     }
 
@@ -63,19 +63,19 @@ public class MatchModel {
         this.userId2 = userId2;
     }
 
-    public boolean isMatchUser2() {
+    public Boolean getMatchUser2() {
         return matchUser2;
     }
 
-    public void setMatchUser2(boolean matchUser2) {
+    public void setMatchUser2(Boolean matchUser2) {
         this.matchUser2 = matchUser2;
     }
 
-    public boolean isMatch() {
+    public Boolean getMatch() {
         return match;
     }
 
-    public void setMatch(boolean match) {
+    public void setMatch(Boolean match) {
         this.match = match;
     }
 }

@@ -10,4 +10,5 @@ public interface UserService {
     UserModel saveUser(UserModel userModel);
     UserModel updateUser(UserModel userModel);
     void deleteUser(Long id);
+    UserModel findByUsername(String username);
 }

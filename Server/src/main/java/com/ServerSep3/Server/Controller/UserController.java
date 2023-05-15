@@ -2,15 +2,14 @@ package com.ServerSep3.Server.Controller;
 
 import com.ServerSep3.Server.Model.UserModel;
 import com.ServerSep3.Server.Service.UserService;
-import org.apache.catalina.User;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
     private final UserService userService;
+
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -21,12 +20,12 @@ public class UserController {
         return userService.findAllEmployees();
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public UserModel findById(@PathVariable("id")int id) {
         return userService.findById(id);
     }
 
-    @PostMapping("/save")//Register?
+    @PostMapping("/save")
     public UserModel saveUser(@RequestBody UserModel user) {
         return userService.saveUser(user);
     }
@@ -34,14 +33,11 @@ public class UserController {
     @PostMapping("/update")
     public UserModel updateUser(@RequestBody UserModel user){return userService.updateUser(user);}
 
-    @GetMapping("/delete")
-    public void deleteUser(@RequestBody long id){userService.deleteUser(id);}
+    @GetMapping("/delete/{id}")
+    public void deleteUser(@PathVariable("id")long id){userService.deleteUser(id);}
 
-   /*
-   @PostMapping("/login")
-    public UserModel loginUser(@RequestBody LoginModel login) {
-        return userService.validateUser(login);
+    @GetMapping("/getByUsername/{username}")
+    public UserModel getByUsername(@PathVariable("username")String user){
+        return userService.findByUsername(user);
     }
-    */
-
 }
