@@ -41,6 +41,18 @@ public class UserModel {
     private String photo5;
     @Column
     private String gender;
+    @Column
+    private String preference;
+    @Column
+    private String horoscope;
+    @Column
+    private String occupation;
+    @Column
+    private String city;
+    @Column
+    private String education;
+    @Column
+    private boolean drink;
 
     @Column
     private boolean administrator;
@@ -48,7 +60,7 @@ public class UserModel {
     public UserModel() {
     }
 
-    public UserModel(int id, String username, String password, String email, String firstName, String lastName, Date birthday, String description, int number_of_matches, String note, String photo1, String photo2, String photo3, String photo4, String photo5, String gender, boolean administrator) {
+    public UserModel(int id, String username, String password, String email, String firstName, String lastName, Date birthday, String description, int number_of_matches, String note, String photo1, String photo2, String photo3, String photo4, String photo5, String gender, String preference, String horoscope, String occupation, String city, String education, boolean drink, boolean administrator) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -65,6 +77,12 @@ public class UserModel {
         this.photo4 = photo4;
         this.photo5 = photo5;
         this.gender = gender;
+        this.preference = preference;
+        this.horoscope = horoscope;
+        this.occupation = occupation;
+        this.city = city;
+        this.education = education;
+        this.drink = drink;
         this.administrator = administrator;
     }
 
@@ -202,5 +220,53 @@ public class UserModel {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getPreference() {
+        return preference;
+    }
+
+    public void setPreference(String preference) {
+        this.preference = preference;
+    }
+
+    public String getHoroscope() {
+        return horoscope;
+    }
+
+    public void setHoroscope(String horoscope) {
+        this.horoscope = horoscope;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public boolean isDrink() {
+        return drink;
+    }
+
+    public void setDrink(boolean drink) {
+        this.drink = drink;
     }
 }

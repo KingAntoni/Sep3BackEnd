@@ -1,0 +1,43 @@
+syntax= "proto3";
+
+service UserGrpc{
+  rpc saveUser(UserModel) returns (UserModel){}
+  rpc findById(GetById) returns (UserModel){}
+  rpc findAll(Empty) returns (stream UserModel){}
+  rpc updateUser(UserModel) returns (UserModel){}
+  rpc deleteUser(GetById) returns (Empty){}
+  rpc findByUsername(GetByUsername) returns (UserModel){}
+  rpc findByGender(GetByGender) returns (stream UserModel){}
+}
+
+message UserModel {
+  int32 id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string birthday = 4;
+  string description = 5;
+  int32 numberOfMatches = 6;
+  string note = 7;
+  string photo1 = 8;
+  string photo2 = 9;
+  string photo3 = 10;
+  string photo4 = 11;
+  string photo5 = 12;
+  string gender = 13;
+  bool administrator = 14;
+}
+
+message GetById{
+  int32 id=1;
+}
+
+message GetByUsername{
+  string username=1;
+}
+
+message GetByGender{
+  string gender=1;
+}
+
+message Empty{
+}
