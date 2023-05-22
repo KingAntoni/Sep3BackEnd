@@ -14,7 +14,8 @@ public class UsersInEvents {
     @Column
     private int userid;
 
-    public UsersInEvents(int eventId, int userid) {
+    public UsersInEvents(int id, int eventId, int userid) {
+        this.id = id;
         this.eventId = eventId;
         this.userid = userid;
     }
@@ -36,5 +37,13 @@ public class UsersInEvents {
 
     public void setUserid(int userid) {
         this.userid = userid;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

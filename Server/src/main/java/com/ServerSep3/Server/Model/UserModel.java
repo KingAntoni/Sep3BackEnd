@@ -22,7 +22,7 @@ public class UserModel {
     @Column
     private String lastName;
     @Column
-    private Date birthday;
+    private String birthday;
     @Column
     private String description;
     @Column
@@ -60,7 +60,7 @@ public class UserModel {
     public UserModel() {
     }
 
-    public UserModel(int id, String username, String password, String email, String firstName, String lastName, Date birthday, String description, int number_of_matches, String note, String photo1, String photo2, String photo3, String photo4, String photo5, String gender, String preference, String horoscope, String occupation, String city, String education, boolean drink, boolean administrator) {
+    public UserModel(int id, String username, String password, String email, String firstName, String lastName, String birthday, String description, int number_of_matches, String note, String photo1, String photo2, String photo3, String photo4, String photo5, String gender, String preference, String horoscope, String occupation, String city, String education, boolean drink, boolean administrator) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -84,6 +84,13 @@ public class UserModel {
         this.education = education;
         this.drink = drink;
         this.administrator = administrator;
+    }
+
+    public UserModel(String firstName, String lastName, String birthday, String description) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = birthday;
+        this.description = description;
     }
 
     public String getUsername() {
@@ -126,11 +133,11 @@ public class UserModel {
         this.lastName = lastName;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 

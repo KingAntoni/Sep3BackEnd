@@ -4,19 +4,20 @@ import com.ServerSep3.Server.Model.UserModel;
 import com.ServerSep3.Server.Repository.UserRepository;
 import com.ServerSep3.Server.Service.MatchService;
 import com.ServerSep3.Server.Service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
-    private final MatchService matchService;
+    @Autowired
+    UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository, MatchService matchService) {
-        this.userRepository = userRepository;
-        this.matchService = matchService;
-    }
+    @Autowired
+    MatchService matchService;
+
+
 
     @Override
     public List<UserModel> findAllUsers() {

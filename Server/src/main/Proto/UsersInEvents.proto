@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package GrpcClasses;
+
+service UsersInEvents {
+  rpc findAllUsersForOneEvent (RequestUsersInEventId) returns (stream UserModel);
+  rpc saveUsersInEvents (UsersInEventsModel) returns (UsersInEventsModel);
+  rpc deleteUser (UsersInEventsModel) returns (Empty);
+}
+
+message UsersInEventsModel {
+  int32 id = 1;
+  int32 eventId = 2;
+  int32 userId = 3;
+}
+
+message RequestUsersInEventId {
+  int32 id = 1;
+}
+
+message UserModel {
+  int32 id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string birthday = 4;
+  string description = 5;
+  int32 numberOfMatches = 6;
+  string note = 7;
+  string photo1 = 8;
+  string photo2 = 9;
+  string photo3 = 10;
+  string photo4 = 11;
+  string photo5 = 12;
+  string gender = 13;
+  bool administrator = 14;
+}
+
+message Empty {
+
+}

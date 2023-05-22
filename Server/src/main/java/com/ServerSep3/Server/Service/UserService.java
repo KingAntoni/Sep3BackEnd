@@ -1,6 +1,8 @@
 package com.ServerSep3.Server.Service;
 
 import com.ServerSep3.Server.Model.UserModel;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
