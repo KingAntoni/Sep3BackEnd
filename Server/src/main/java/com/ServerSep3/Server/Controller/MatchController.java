@@ -13,7 +13,6 @@ public class MatchController {
         this.matchService = matchService;
     }
 
-
     @GetMapping("/{id}")
     public MatchModel findById(@PathVariable("id")int id){
         return matchService.findById(id);
@@ -21,7 +20,6 @@ public class MatchController {
 
     @PostMapping("/update")
     public MatchModel updateMatch(@RequestBody MatchModel matchModel){
-        matchService.deleteMatch(Long.valueOf(matchModel.getId()));
         return matchService.updateMatch(matchModel);
     }
 
@@ -29,5 +27,8 @@ public class MatchController {
     public MatchModel saveMatch(@RequestBody MatchModel matchModel){
         return matchService.createMatch(matchModel);
     }
+
+    @GetMapping("/delete")
+    public void deleteMatch(@RequestBody MatchModel matchModel){matchService.deleteMatch(matchModel);}
 
 }

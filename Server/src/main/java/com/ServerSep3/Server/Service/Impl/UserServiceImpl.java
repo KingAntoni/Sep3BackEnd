@@ -37,8 +37,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserModel updateUser(UserModel userModel) {
-        deleteUser(Long.valueOf(userModel.getId()));
-        return userRepository.save(userModel);
+        UserModel existing= userRepository.findById(userModel.getId());
+        existing.setDescription(userModel.getDescription());
+        existing.setNote(userModel.getNote());
+        existing.setPhoto1(userModel.getPhoto1());
+        existing.setPhoto2(userModel.getPhoto2());
+        existing.setPhoto3(userModel.getPhoto3());
+        existing.setPhoto4(userModel.getPhoto4());
+        existing.setPhoto5(userModel.getPhoto5());
+        existing.setOccupation(userModel.getOccupation());
+        existing.setEducation(userModel.getEducation());
+        existing.setCity(userModel.getCity());
+        existing.setDrink(userModel.isDrink());
+        return userRepository.save(existing);
     }
 
     @Override
