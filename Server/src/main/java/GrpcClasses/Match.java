@@ -6355,19 +6355,16 @@ public final class Match {
       "\030\020 \001(\t\022\022\n\npreference\030\021 \001(\t\022\021\n\thoroscope\030" +
       "\022 \001(\t\022\022\n\noccupation\030\023 \001(\t\022\014\n\004city\030\024 \001(\t\022" +
       "\021\n\teducation\030\025 \001(\t\022\r\n\005drink\030\026 \001(\010\022\025\n\radm" +
-      "inistrator\030\027 \001(\010\"\007\n\005Empty2\324\003\n\007Matches\022@\n" +
+      "inistrator\030\027 \001(\010\"\007\n\005Empty2\312\002\n\007Matches\022@\n" +
       "\010findById\022\033.GrpcClasses.MatchIdRequest\032\027" +
-      ".GrpcClasses.MatchModel\022?\n\013updateMatch\022\027" +
-      ".GrpcClasses.MatchModel\032\027.GrpcClasses.Ma" +
-      "tchModel\022>\n\013deleteMatch\022\033.GrpcClasses.Ma" +
-      "tchIdRequest\032\022.GrpcClasses.Empty\022E\n\014find" +
-      "ByUserId\022\032.GrpcClasses.UserIdRequest\032\027.G" +
-      "rpcClasses.MatchModel0\001\022<\n\007isMatch\022\027.Grp" +
-      "cClasses.MatchModel\032\030.GrpcClasses.MatchR" +
-      "esult\022@\n\022createMatchForUser\022\026.GrpcClasse" +
-      "s.UserModel\032\022.GrpcClasses.Empty\022?\n\013creat" +
-      "eMatch\022\027.GrpcClasses.MatchModel\032\027.GrpcCl" +
-      "asses.MatchModelb\006proto3"
+      ".GrpcClasses.MatchModel\022:\n\013updateMatch\022\027" +
+      ".GrpcClasses.MatchModel\032\022.GrpcClasses.Em" +
+      "pty\022>\n\013deleteMatch\022\033.GrpcClasses.MatchId" +
+      "Request\032\022.GrpcClasses.Empty\022E\n\014findByUse" +
+      "rId\022\032.GrpcClasses.UserIdRequest\032\027.GrpcCl" +
+      "asses.MatchModel0\001\022:\n\013createMatch\022\027.Grpc" +
+      "Classes.MatchModel\032\022.GrpcClasses.Emptyb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

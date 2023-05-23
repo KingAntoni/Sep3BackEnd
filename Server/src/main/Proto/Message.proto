@@ -3,7 +3,7 @@ syntax = "proto3";
 package GrpcClasses;
 
 service Messages {
-  rpc findById(MessageIdRequested) returns (Response);
+  rpc findById(MessageIdRequested) returns (MessageModel);
   rpc findAllMessagesForAChat(ChatIdRequested) returns (stream MessageModel);
   rpc saveMessage (MessageModel) returns (MessageModel);
   rpc deleteMessage (MessageIdRequested) returns (MessageDeleted);
@@ -23,11 +23,6 @@ message MessageIdRequested {
 
 message ChatIdRequested {
   int32 chatId = 1;
-}
-
-message Response {
-  string messageOut = 1;
-  int32 code = 2;
 }
 
 message MessageDeleted {

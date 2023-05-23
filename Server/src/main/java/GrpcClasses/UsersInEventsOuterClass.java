@@ -5149,13 +5149,13 @@ public final class UsersInEventsOuterClass {
       "ence\030\021 \001(\t\022\021\n\thoroscope\030\022 \001(\t\022\022\n\noccupat" +
       "ion\030\023 \001(\t\022\014\n\004city\030\024 \001(\t\022\021\n\teducation\030\025 \001" +
       "(\t\022\r\n\005drink\030\026 \001(\010\022\025\n\radministrator\030\027 \001(\010" +
-      "\"\007\n\005Empty2\202\002\n\rUsersInEvents\022W\n\027findAllUs" +
+      "\"\007\n\005Empty2\365\001\n\rUsersInEvents\022W\n\027findAllUs" +
       "ersForOneEvent\022\".GrpcClasses.RequestUser" +
-      "sInEventId\032\026.GrpcClasses.UserModel0\001\022U\n\021" +
+      "sInEventId\032\026.GrpcClasses.UserModel0\001\022H\n\021" +
       "saveUsersInEvents\022\037.GrpcClasses.UsersInE" +
-      "ventsModel\032\037.GrpcClasses.UsersInEventsMo" +
-      "del\022A\n\ndeleteUser\022\037.GrpcClasses.UsersInE" +
-      "ventsModel\032\022.GrpcClasses.Emptyb\006proto3"
+      "ventsModel\032\022.GrpcClasses.Empty\022A\n\ndelete" +
+      "User\022\037.GrpcClasses.UsersInEventsModel\032\022." +
+      "GrpcClasses.Emptyb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -9,7 +9,6 @@ service UserGrpc{
   rpc updateUser(UserModel) returns (Empty){}
   rpc deleteUser(GetById) returns (Empty){}
   rpc findByUsername(GetByUsername) returns (UserModel){}
-  rpc findByGender(GetByGender) returns (stream UserModel){}
 }
 
 message UserModel {

@@ -46,28 +46,28 @@ public final class ChatsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<GrpcClasses.Chat.ChatModel,
-      GrpcClasses.Chat.ChatModel> getSaveChatMethod;
+      GrpcClasses.Chat.Empty> getSaveChatMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "saveChat",
       requestType = GrpcClasses.Chat.ChatModel.class,
-      responseType = GrpcClasses.Chat.ChatModel.class,
+      responseType = GrpcClasses.Chat.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<GrpcClasses.Chat.ChatModel,
-      GrpcClasses.Chat.ChatModel> getSaveChatMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Chat.ChatModel, GrpcClasses.Chat.ChatModel> getSaveChatMethod;
+      GrpcClasses.Chat.Empty> getSaveChatMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Chat.ChatModel, GrpcClasses.Chat.Empty> getSaveChatMethod;
     if ((getSaveChatMethod = ChatsGrpc.getSaveChatMethod) == null) {
       synchronized (ChatsGrpc.class) {
         if ((getSaveChatMethod = ChatsGrpc.getSaveChatMethod) == null) {
           ChatsGrpc.getSaveChatMethod = getSaveChatMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Chat.ChatModel, GrpcClasses.Chat.ChatModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Chat.ChatModel, GrpcClasses.Chat.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "saveChat"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GrpcClasses.Chat.ChatModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Chat.ChatModel.getDefaultInstance()))
+                  GrpcClasses.Chat.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ChatsMethodDescriptorSupplier("saveChat"))
               .build();
         }
@@ -196,7 +196,7 @@ public final class ChatsGrpc {
     /**
      */
     public void saveChat(GrpcClasses.Chat.ChatModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.ChatModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveChatMethod(), responseObserver);
     }
 
@@ -228,7 +228,7 @@ public final class ChatsGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 GrpcClasses.Chat.ChatModel,
-                GrpcClasses.Chat.ChatModel>(
+                GrpcClasses.Chat.Empty>(
                   this, METHODID_SAVE_CHAT)))
           .addMethod(
             getDeleteChatMethod(),
@@ -273,7 +273,7 @@ public final class ChatsGrpc {
     /**
      */
     public void saveChat(GrpcClasses.Chat.ChatModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.ChatModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSaveChatMethod(), getCallOptions()), request, responseObserver);
     }
@@ -318,7 +318,7 @@ public final class ChatsGrpc {
 
     /**
      */
-    public GrpcClasses.Chat.ChatModel saveChat(GrpcClasses.Chat.ChatModel request) {
+    public GrpcClasses.Chat.Empty saveChat(GrpcClasses.Chat.ChatModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSaveChatMethod(), getCallOptions(), request);
     }
@@ -362,7 +362,7 @@ public final class ChatsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.ChatModel> saveChat(
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.Empty> saveChat(
         GrpcClasses.Chat.ChatModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSaveChatMethod(), getCallOptions()), request);
@@ -413,7 +413,7 @@ public final class ChatsGrpc {
           break;
         case METHODID_SAVE_CHAT:
           serviceImpl.saveChat((GrpcClasses.Chat.ChatModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.ChatModel>) responseObserver);
+              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.Empty>) responseObserver);
           break;
         case METHODID_DELETE_CHAT:
           serviceImpl.deleteChat((GrpcClasses.Chat.lookUpById) request,

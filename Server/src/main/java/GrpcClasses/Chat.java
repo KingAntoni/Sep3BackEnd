@@ -2076,14 +2076,14 @@ public final class Chat {
       "\n\nChat.proto\022\013GrpcClasses\"9\n\tChatModel\022\n" +
       "\n\002id\030\001 \001(\005\022\017\n\007userId1\030\002 \001(\005\022\017\n\007userId2\030\003" +
       " \001(\005\"\030\n\nlookUpById\022\n\n\002id\030\001 \001(\005\" \n\016lookUp" +
-      "ByUserId\022\016\n\006userId\030\001 \001(\005\"\007\n\005Empty2\200\002\n\005Ch" +
+      "ByUserId\022\016\n\006userId\030\001 \001(\005\"\007\n\005Empty2\374\001\n\005Ch" +
       "ats\022;\n\010findById\022\027.GrpcClasses.lookUpById" +
-      "\032\026.GrpcClasses.ChatModel\022:\n\010saveChat\022\026.G" +
-      "rpcClasses.ChatModel\032\026.GrpcClasses.ChatM" +
-      "odel\0229\n\ndeleteChat\022\027.GrpcClasses.lookUpB" +
-      "yId\032\022.GrpcClasses.Empty\022C\n\014findByUserId\022" +
-      "\033.GrpcClasses.lookUpByUserId\032\026.GrpcClass" +
-      "es.ChatModelb\006proto3"
+      "\032\026.GrpcClasses.ChatModel\0226\n\010saveChat\022\026.G" +
+      "rpcClasses.ChatModel\032\022.GrpcClasses.Empty" +
+      "\0229\n\ndeleteChat\022\027.GrpcClasses.lookUpById\032" +
+      "\022.GrpcClasses.Empty\022C\n\014findByUserId\022\033.Gr" +
+      "pcClasses.lookUpByUserId\032\026.GrpcClasses.C" +
+      "hatModelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

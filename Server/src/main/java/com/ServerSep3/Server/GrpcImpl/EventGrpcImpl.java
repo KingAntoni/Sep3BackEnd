@@ -36,7 +36,7 @@ public class EventGrpcImpl extends EventsGrpc.EventsImplBase {
     }
 
     @Override
-    public void saveEvent(Event.EventModel request, StreamObserver<Event.EventModel> responseObserver) {
+    public void saveEvent(Event.EventModel request, StreamObserver<Event.Empty> responseObserver) {
         System.out.println("Save event");
         service.saveEvent(new EventModel(request.getId(),request.getDescription(), request.getTitle(), request.getMadeById()));
         responseObserver.onCompleted();
@@ -44,7 +44,7 @@ public class EventGrpcImpl extends EventsGrpc.EventsImplBase {
     }
 
     @Override
-    public void updateEvent(Event.EventModel request, StreamObserver<Event.EventModel> responseObserver) {
+    public void updateEvent(Event.EventModel request, StreamObserver<Event.Empty> responseObserver) {
         System.out.println("Update event");
         service.updateEvent(new EventModel(request.getId(),request.getDescription(), request.getTitle(), request.getMadeById()));
         responseObserver.onCompleted();

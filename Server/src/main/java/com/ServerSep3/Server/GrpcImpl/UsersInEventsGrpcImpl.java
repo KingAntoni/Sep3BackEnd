@@ -22,25 +22,24 @@ public class UsersInEventsGrpcImpl extends UsersInEventsGrpc.UsersInEventsImplBa
         System.out.println("Find all users for one event");
         List<UserModel> users= service.findAllUserForOneEvent(request.getId());
         for (int i=0;i< users.size();i++){
-            UsersInEventsOuterClass.UserModel user= UsersInEventsOuterClass.UserModel.newBuilder().setFirstName(users.get(i).getFirstName())
+            UsersInEventsOuterClass.UserModel user= UsersInEventsOuterClass.UserModel.newBuilder()
+                    .setFirstName(users.get(i).getFirstName())
                     .setLastName(users.get(i).getLastName())
                     .setId(users.get(i).getId()).build();
-
+            responseObserver.onNext(user);
         }
-
+        responseObserver.onCompleted();
+        System.out.println("All users found");
     }
 
     @Override
-    public void saveUsersInEvents(UsersInEventsOuterClass.UsersInEventsModel request, StreamObserver<UsersInEventsOuterClass.UsersInEventsModel> responseObserver) {
+    public void saveUsersInEvents(UsersInEventsOuterClass.UsersInEventsModel request, StreamObserver<UsersInEventsOuterClass.Empty> responseObserver) {
         System.out.println("Save user in event");
         UsersInEvents usersInEvents= new UsersInEvents(request.getId(), request.getEventId(),request.getUserId());
         service.saveUserInEvent(usersInEvents);
-        UsersInEventsOuterClass.UsersInEventsModel response= UsersInEventsOuterClass.UsersInEventsModel.newBuilder().setEventId(request.getEventId()).setUserId(request.getUserId()).build();
-        responseObserver.onNext(response);
         responseObserver.onCompleted();
         System.out.println("User save");
     }
-
 
     @Override
     public void deleteUser(UsersInEventsOuterClass.UsersInEventsModel request, StreamObserver<UsersInEventsOuterClass.Empty> responseObserver) {

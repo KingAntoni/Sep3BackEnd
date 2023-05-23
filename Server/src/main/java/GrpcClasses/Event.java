@@ -1811,16 +1811,15 @@ public final class Event {
       "\n\013Event.proto\022\013GrpcClasses\"N\n\nEventModel" +
       "\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\023\n\013descripti" +
       "on\030\003 \001(\t\022\020\n\010madeById\030\004 \001(\005\"\034\n\016EventIdReq" +
-      "uest\022\n\n\002id\030\001 \001(\005\"\007\n\005Empty2\312\002\n\006Events\022>\n\r" +
+      "uest\022\n\n\002id\030\001 \001(\005\"\007\n\005Empty2\300\002\n\006Events\022>\n\r" +
       "findAllEvents\022\022.GrpcClasses.Empty\032\027.Grpc" +
       "Classes.EventModel0\001\022@\n\010findById\022\033.GrpcC" +
       "lasses.EventIdRequest\032\027.GrpcClasses.Even" +
-      "tModel\022=\n\tsaveEvent\022\027.GrpcClasses.EventM" +
-      "odel\032\027.GrpcClasses.EventModel\022?\n\013updateE" +
-      "vent\022\027.GrpcClasses.EventModel\032\027.GrpcClas" +
-      "ses.EventModel\022>\n\013deleteEvent\022\033.GrpcClas" +
-      "ses.EventIdRequest\032\022.GrpcClasses.Emptyb\006" +
-      "proto3"
+      "tModel\0228\n\tsaveEvent\022\027.GrpcClasses.EventM" +
+      "odel\032\022.GrpcClasses.Empty\022:\n\013updateEvent\022" +
+      "\027.GrpcClasses.EventModel\032\022.GrpcClasses.E" +
+      "mpty\022>\n\013deleteEvent\022\033.GrpcClasses.EventI" +
+      "dRequest\032\022.GrpcClasses.Emptyb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

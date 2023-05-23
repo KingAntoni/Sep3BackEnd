@@ -5663,19 +5663,19 @@ public final class User {
       "ion\030\025 \001(\t\022\r\n\005drink\030\026 \001(\010\022\025\n\radministrato" +
       "r\030\027 \001(\010\"\025\n\007GetById\022\n\n\002id\030\001 \001(\005\"!\n\rGetByU" +
       "sername\022\020\n\010username\030\001 \001(\t\"\035\n\013GetByGender" +
-      "\022\016\n\006gender\030\001 \001(\t\"\007\n\005Empty2\303\003\n\010UserGrpc\022<" +
-      "\n\010saveUser\022\026.GrpcClasses.UserModel\032\026.Grp" +
-      "cClasses.UserModel\"\000\022:\n\010findById\022\024.GrpcC" +
-      "lasses.GetById\032\026.GrpcClasses.UserModel\"\000" +
-      "\0229\n\007findAll\022\022.GrpcClasses.Empty\032\026.GrpcCl" +
-      "asses.UserModel\"\0000\001\022:\n\nupdateUser\022\026.Grpc" +
-      "Classes.UserModel\032\022.GrpcClasses.Empty\"\000\022" +
-      "8\n\ndeleteUser\022\024.GrpcClasses.GetById\032\022.Gr" +
-      "pcClasses.Empty\"\000\022F\n\016findByUsername\022\032.Gr" +
-      "pcClasses.GetByUsername\032\026.GrpcClasses.Us" +
-      "erModel\"\000\022D\n\014findByGender\022\030.GrpcClasses." +
-      "GetByGender\032\026.GrpcClasses.UserModel\"\0000\001b" +
-      "\006proto3"
+      "\022\016\n\006gender\030\001 \001(\t\"\007\n\005Empty2\277\003\n\010UserGrpc\0228" +
+      "\n\010saveUser\022\026.GrpcClasses.UserModel\032\022.Grp" +
+      "cClasses.Empty\"\000\022:\n\010findById\022\024.GrpcClass" +
+      "es.GetById\032\026.GrpcClasses.UserModel\"\000\0229\n\007" +
+      "findAll\022\022.GrpcClasses.Empty\032\026.GrpcClasse" +
+      "s.UserModel\"\0000\001\022:\n\nupdateUser\022\026.GrpcClas" +
+      "ses.UserModel\032\022.GrpcClasses.Empty\"\000\0228\n\nd" +
+      "eleteUser\022\024.GrpcClasses.GetById\032\022.GrpcCl" +
+      "asses.Empty\"\000\022F\n\016findByUsername\022\032.GrpcCl" +
+      "asses.GetByUsername\032\026.GrpcClasses.UserMo" +
+      "del\"\000\022D\n\014findByGender\022\030.GrpcClasses.GetB" +
+      "yGender\032\026.GrpcClasses.UserModel\"\0000\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

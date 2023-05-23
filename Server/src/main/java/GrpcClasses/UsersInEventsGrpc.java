@@ -46,28 +46,28 @@ public final class UsersInEventsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel,
-      GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel> getSaveUsersInEventsMethod;
+      GrpcClasses.UsersInEventsOuterClass.Empty> getSaveUsersInEventsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "saveUsersInEvents",
       requestType = GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel.class,
-      responseType = GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel.class,
+      responseType = GrpcClasses.UsersInEventsOuterClass.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel,
-      GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel> getSaveUsersInEventsMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel, GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel> getSaveUsersInEventsMethod;
+      GrpcClasses.UsersInEventsOuterClass.Empty> getSaveUsersInEventsMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel, GrpcClasses.UsersInEventsOuterClass.Empty> getSaveUsersInEventsMethod;
     if ((getSaveUsersInEventsMethod = UsersInEventsGrpc.getSaveUsersInEventsMethod) == null) {
       synchronized (UsersInEventsGrpc.class) {
         if ((getSaveUsersInEventsMethod = UsersInEventsGrpc.getSaveUsersInEventsMethod) == null) {
           UsersInEventsGrpc.getSaveUsersInEventsMethod = getSaveUsersInEventsMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel, GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel, GrpcClasses.UsersInEventsOuterClass.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "saveUsersInEvents"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel.getDefaultInstance()))
+                  GrpcClasses.UsersInEventsOuterClass.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new UsersInEventsMethodDescriptorSupplier("saveUsersInEvents"))
               .build();
         }
@@ -165,7 +165,7 @@ public final class UsersInEventsGrpc {
     /**
      */
     public void saveUsersInEvents(GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.UsersInEventsOuterClass.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveUsersInEventsMethod(), responseObserver);
     }
 
@@ -190,7 +190,7 @@ public final class UsersInEventsGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel,
-                GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel>(
+                GrpcClasses.UsersInEventsOuterClass.Empty>(
                   this, METHODID_SAVE_USERS_IN_EVENTS)))
           .addMethod(
             getDeleteUserMethod(),
@@ -228,7 +228,7 @@ public final class UsersInEventsGrpc {
     /**
      */
     public void saveUsersInEvents(GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.UsersInEventsOuterClass.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSaveUsersInEventsMethod(), getCallOptions()), request, responseObserver);
     }
@@ -266,7 +266,7 @@ public final class UsersInEventsGrpc {
 
     /**
      */
-    public GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel saveUsersInEvents(GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel request) {
+    public GrpcClasses.UsersInEventsOuterClass.Empty saveUsersInEvents(GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSaveUsersInEventsMethod(), getCallOptions(), request);
     }
@@ -295,7 +295,7 @@ public final class UsersInEventsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel> saveUsersInEvents(
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.UsersInEventsOuterClass.Empty> saveUsersInEvents(
         GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSaveUsersInEventsMethod(), getCallOptions()), request);
@@ -337,7 +337,7 @@ public final class UsersInEventsGrpc {
           break;
         case METHODID_SAVE_USERS_IN_EVENTS:
           serviceImpl.saveUsersInEvents((GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel>) responseObserver);
+              (io.grpc.stub.StreamObserver<GrpcClasses.UsersInEventsOuterClass.Empty>) responseObserver);
           break;
         case METHODID_DELETE_USER:
           serviceImpl.deleteUser((GrpcClasses.UsersInEventsOuterClass.UsersInEventsModel) request,

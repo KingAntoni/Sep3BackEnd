@@ -15,28 +15,28 @@ public final class UserGrpcGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<GrpcClasses.User.UserModel,
-      GrpcClasses.User.UserModel> getSaveUserMethod;
+      GrpcClasses.User.Empty> getSaveUserMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "saveUser",
       requestType = GrpcClasses.User.UserModel.class,
-      responseType = GrpcClasses.User.UserModel.class,
+      responseType = GrpcClasses.User.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<GrpcClasses.User.UserModel,
-      GrpcClasses.User.UserModel> getSaveUserMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.User.UserModel, GrpcClasses.User.UserModel> getSaveUserMethod;
+      GrpcClasses.User.Empty> getSaveUserMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.User.UserModel, GrpcClasses.User.Empty> getSaveUserMethod;
     if ((getSaveUserMethod = UserGrpcGrpc.getSaveUserMethod) == null) {
       synchronized (UserGrpcGrpc.class) {
         if ((getSaveUserMethod = UserGrpcGrpc.getSaveUserMethod) == null) {
           UserGrpcGrpc.getSaveUserMethod = getSaveUserMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.User.UserModel, GrpcClasses.User.UserModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.User.UserModel, GrpcClasses.User.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "saveUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GrpcClasses.User.UserModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.User.UserModel.getDefaultInstance()))
+                  GrpcClasses.User.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new UserGrpcMethodDescriptorSupplier("saveUser"))
               .build();
         }
@@ -282,7 +282,7 @@ public final class UserGrpcGrpc {
     /**
      */
     public void saveUser(GrpcClasses.User.UserModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.User.UserModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.User.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveUserMethod(), responseObserver);
     }
 
@@ -335,7 +335,7 @@ public final class UserGrpcGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 GrpcClasses.User.UserModel,
-                GrpcClasses.User.UserModel>(
+                GrpcClasses.User.Empty>(
                   this, METHODID_SAVE_USER)))
           .addMethod(
             getFindByIdMethod(),
@@ -400,7 +400,7 @@ public final class UserGrpcGrpc {
     /**
      */
     public void saveUser(GrpcClasses.User.UserModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.User.UserModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.User.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSaveUserMethod(), getCallOptions()), request, responseObserver);
     }
@@ -470,7 +470,7 @@ public final class UserGrpcGrpc {
 
     /**
      */
-    public GrpcClasses.User.UserModel saveUser(GrpcClasses.User.UserModel request) {
+    public GrpcClasses.User.Empty saveUser(GrpcClasses.User.UserModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSaveUserMethod(), getCallOptions(), request);
     }
@@ -536,7 +536,7 @@ public final class UserGrpcGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.User.UserModel> saveUser(
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.User.Empty> saveUser(
         GrpcClasses.User.UserModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSaveUserMethod(), getCallOptions()), request);
@@ -602,7 +602,7 @@ public final class UserGrpcGrpc {
       switch (methodId) {
         case METHODID_SAVE_USER:
           serviceImpl.saveUser((GrpcClasses.User.UserModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.User.UserModel>) responseObserver);
+              (io.grpc.stub.StreamObserver<GrpcClasses.User.Empty>) responseObserver);
           break;
         case METHODID_FIND_BY_ID:
           serviceImpl.findById((GrpcClasses.User.GetById) request,

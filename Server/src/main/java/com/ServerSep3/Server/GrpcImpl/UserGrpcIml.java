@@ -21,36 +21,10 @@ public class UserGrpcIml extends UserGrpcGrpc.UserGrpcImplBase {
     }
 
     @Override
-    public void saveUser(User.UserModel request, StreamObserver<User.UserModel> responseObserver){
+    public void saveUser(User.UserModel request, StreamObserver<User.Empty> responseObserver) {
         System.out.println("Save user");
         UserModel userModel= new UserModel(request.getId(),request.getUsername(),request.getPassword(),request.getEmail(),request.getFirstName(),request.getLastName(), request.getBirthday(), request.getDescription(), request.getNumberOfMatches(),request.getNote(), request.getPhoto1(), request.getPhoto2(), request.getPhoto3(), request.getPhoto4(), request.getPhoto5(), request.getGender(), request.getPreference(), request.getHoroscope(), request.getOccupation(), request.getCity(), request.getEducation(), request.getDrink(), request.getAdministrator());
         userService.saveUser(userModel);
-        User.UserModel response = User.UserModel.newBuilder()
-                .setFirstName(request.getFirstName())
-                .setId(request.getId())
-                .setUsername(request.getUsername())
-                .setPassword(request.getPassword())
-                .setEmail(request.getEmail())
-                .setLastName(request.getLastName())
-                .setBirthday(request.getBirthday())
-                .setDescription(request.getDescription())
-                .setNumberOfMatches(request.getNumberOfMatches())
-                .setNote(request.getNote())
-                .setPhoto1(request.getPhoto1())
-                .setPhoto2(request.getPhoto2())
-                .setPhoto3(request.getPhoto3())
-                .setPhoto4(request.getPhoto4())
-                .setPhoto5(request.getPhoto5())
-                .setGender(request.getGender())
-                .setPreference(request.getPreference())
-                .setHoroscope(request.getHoroscope())
-                .setOccupation(request.getOccupation())
-                .setCity(request.getCity())
-                .setEducation(request.getEducation())
-                .setDrink(request.getDrink())
-                .setAdministrator(request.getAdministrator())
-                .build();
-        responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
 
@@ -90,9 +64,8 @@ public class UserGrpcIml extends UserGrpcGrpc.UserGrpcImplBase {
     @Override
     public void findAll(User.Empty request, StreamObserver<User.UserModel> responseObserver) {
         System.out.println("Find all");
-        List<UserModel> list= new ArrayList<>();
+        List<UserModel> list= userService.findAllUsers();
         List<User.UserModel> listGrpc= new ArrayList<>();
-        list= userService.findAllUsers();
         for (int i=0;i< list.size();i++){
             User.UserModel userModel= User.UserModel.newBuilder()
                     .setFirstName(list.get(i).getFirstName())
@@ -120,10 +93,9 @@ public class UserGrpcIml extends UserGrpcGrpc.UserGrpcImplBase {
                     .setAdministrator(list.get(i).isAdministrator())
                     .build();
             listGrpc.add(userModel);
-
         }
-        for (int i=0;i< listGrpc.size();i++){
-            responseObserver.onNext(listGrpc.get(i));
+        for (User.UserModel userModel : listGrpc) {
+            responseObserver.onNext(userModel);
         }
         responseObserver.onCompleted();
         System.out.println("Users send");
@@ -177,4 +149,5 @@ public class UserGrpcIml extends UserGrpcGrpc.UserGrpcImplBase {
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
 }

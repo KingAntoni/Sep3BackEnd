@@ -77,28 +77,28 @@ public final class EventsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<GrpcClasses.Event.EventModel,
-      GrpcClasses.Event.EventModel> getSaveEventMethod;
+      GrpcClasses.Event.Empty> getSaveEventMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "saveEvent",
       requestType = GrpcClasses.Event.EventModel.class,
-      responseType = GrpcClasses.Event.EventModel.class,
+      responseType = GrpcClasses.Event.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<GrpcClasses.Event.EventModel,
-      GrpcClasses.Event.EventModel> getSaveEventMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Event.EventModel, GrpcClasses.Event.EventModel> getSaveEventMethod;
+      GrpcClasses.Event.Empty> getSaveEventMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Event.EventModel, GrpcClasses.Event.Empty> getSaveEventMethod;
     if ((getSaveEventMethod = EventsGrpc.getSaveEventMethod) == null) {
       synchronized (EventsGrpc.class) {
         if ((getSaveEventMethod = EventsGrpc.getSaveEventMethod) == null) {
           EventsGrpc.getSaveEventMethod = getSaveEventMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Event.EventModel, GrpcClasses.Event.EventModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Event.EventModel, GrpcClasses.Event.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "saveEvent"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GrpcClasses.Event.EventModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Event.EventModel.getDefaultInstance()))
+                  GrpcClasses.Event.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new EventsMethodDescriptorSupplier("saveEvent"))
               .build();
         }
@@ -108,28 +108,28 @@ public final class EventsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<GrpcClasses.Event.EventModel,
-      GrpcClasses.Event.EventModel> getUpdateEventMethod;
+      GrpcClasses.Event.Empty> getUpdateEventMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "updateEvent",
       requestType = GrpcClasses.Event.EventModel.class,
-      responseType = GrpcClasses.Event.EventModel.class,
+      responseType = GrpcClasses.Event.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<GrpcClasses.Event.EventModel,
-      GrpcClasses.Event.EventModel> getUpdateEventMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Event.EventModel, GrpcClasses.Event.EventModel> getUpdateEventMethod;
+      GrpcClasses.Event.Empty> getUpdateEventMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Event.EventModel, GrpcClasses.Event.Empty> getUpdateEventMethod;
     if ((getUpdateEventMethod = EventsGrpc.getUpdateEventMethod) == null) {
       synchronized (EventsGrpc.class) {
         if ((getUpdateEventMethod = EventsGrpc.getUpdateEventMethod) == null) {
           EventsGrpc.getUpdateEventMethod = getUpdateEventMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Event.EventModel, GrpcClasses.Event.EventModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Event.EventModel, GrpcClasses.Event.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateEvent"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GrpcClasses.Event.EventModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Event.EventModel.getDefaultInstance()))
+                  GrpcClasses.Event.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new EventsMethodDescriptorSupplier("updateEvent"))
               .build();
         }
@@ -234,14 +234,14 @@ public final class EventsGrpc {
     /**
      */
     public void saveEvent(GrpcClasses.Event.EventModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Event.EventModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Event.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveEventMethod(), responseObserver);
     }
 
     /**
      */
     public void updateEvent(GrpcClasses.Event.EventModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Event.EventModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Event.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEventMethod(), responseObserver);
     }
 
@@ -273,14 +273,14 @@ public final class EventsGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 GrpcClasses.Event.EventModel,
-                GrpcClasses.Event.EventModel>(
+                GrpcClasses.Event.Empty>(
                   this, METHODID_SAVE_EVENT)))
           .addMethod(
             getUpdateEventMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 GrpcClasses.Event.EventModel,
-                GrpcClasses.Event.EventModel>(
+                GrpcClasses.Event.Empty>(
                   this, METHODID_UPDATE_EVENT)))
           .addMethod(
             getDeleteEventMethod(),
@@ -326,7 +326,7 @@ public final class EventsGrpc {
     /**
      */
     public void saveEvent(GrpcClasses.Event.EventModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Event.EventModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Event.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSaveEventMethod(), getCallOptions()), request, responseObserver);
     }
@@ -334,7 +334,7 @@ public final class EventsGrpc {
     /**
      */
     public void updateEvent(GrpcClasses.Event.EventModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Event.EventModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Event.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEventMethod(), getCallOptions()), request, responseObserver);
     }
@@ -379,14 +379,14 @@ public final class EventsGrpc {
 
     /**
      */
-    public GrpcClasses.Event.EventModel saveEvent(GrpcClasses.Event.EventModel request) {
+    public GrpcClasses.Event.Empty saveEvent(GrpcClasses.Event.EventModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSaveEventMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public GrpcClasses.Event.EventModel updateEvent(GrpcClasses.Event.EventModel request) {
+    public GrpcClasses.Event.Empty updateEvent(GrpcClasses.Event.EventModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEventMethod(), getCallOptions(), request);
     }
@@ -423,7 +423,7 @@ public final class EventsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Event.EventModel> saveEvent(
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Event.Empty> saveEvent(
         GrpcClasses.Event.EventModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSaveEventMethod(), getCallOptions()), request);
@@ -431,7 +431,7 @@ public final class EventsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Event.EventModel> updateEvent(
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Event.Empty> updateEvent(
         GrpcClasses.Event.EventModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEventMethod(), getCallOptions()), request);
@@ -479,11 +479,11 @@ public final class EventsGrpc {
           break;
         case METHODID_SAVE_EVENT:
           serviceImpl.saveEvent((GrpcClasses.Event.EventModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Event.EventModel>) responseObserver);
+              (io.grpc.stub.StreamObserver<GrpcClasses.Event.Empty>) responseObserver);
           break;
         case METHODID_UPDATE_EVENT:
           serviceImpl.updateEvent((GrpcClasses.Event.EventModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Event.EventModel>) responseObserver);
+              (io.grpc.stub.StreamObserver<GrpcClasses.Event.Empty>) responseObserver);
           break;
         case METHODID_DELETE_EVENT:
           serviceImpl.deleteEvent((GrpcClasses.Event.EventIdRequest) request,

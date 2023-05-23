@@ -46,28 +46,28 @@ public final class MatchesGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel,
-      GrpcClasses.Match.MatchModel> getUpdateMatchMethod;
+      GrpcClasses.Match.Empty> getUpdateMatchMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "updateMatch",
       requestType = GrpcClasses.Match.MatchModel.class,
-      responseType = GrpcClasses.Match.MatchModel.class,
+      responseType = GrpcClasses.Match.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel,
-      GrpcClasses.Match.MatchModel> getUpdateMatchMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel, GrpcClasses.Match.MatchModel> getUpdateMatchMethod;
+      GrpcClasses.Match.Empty> getUpdateMatchMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel, GrpcClasses.Match.Empty> getUpdateMatchMethod;
     if ((getUpdateMatchMethod = MatchesGrpc.getUpdateMatchMethod) == null) {
       synchronized (MatchesGrpc.class) {
         if ((getUpdateMatchMethod = MatchesGrpc.getUpdateMatchMethod) == null) {
           MatchesGrpc.getUpdateMatchMethod = getUpdateMatchMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Match.MatchModel, GrpcClasses.Match.MatchModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Match.MatchModel, GrpcClasses.Match.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateMatch"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GrpcClasses.Match.MatchModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Match.MatchModel.getDefaultInstance()))
+                  GrpcClasses.Match.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new MatchesMethodDescriptorSupplier("updateMatch"))
               .build();
         }
@@ -139,90 +139,28 @@ public final class MatchesGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel,
-      GrpcClasses.Match.MatchResult> getIsMatchMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "isMatch",
-      requestType = GrpcClasses.Match.MatchModel.class,
-      responseType = GrpcClasses.Match.MatchResult.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel,
-      GrpcClasses.Match.MatchResult> getIsMatchMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel, GrpcClasses.Match.MatchResult> getIsMatchMethod;
-    if ((getIsMatchMethod = MatchesGrpc.getIsMatchMethod) == null) {
-      synchronized (MatchesGrpc.class) {
-        if ((getIsMatchMethod = MatchesGrpc.getIsMatchMethod) == null) {
-          MatchesGrpc.getIsMatchMethod = getIsMatchMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Match.MatchModel, GrpcClasses.Match.MatchResult>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "isMatch"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Match.MatchModel.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Match.MatchResult.getDefaultInstance()))
-              .setSchemaDescriptor(new MatchesMethodDescriptorSupplier("isMatch"))
-              .build();
-        }
-      }
-    }
-    return getIsMatchMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Match.UserModel,
-      GrpcClasses.Match.Empty> getCreateMatchForUserMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "createMatchForUser",
-      requestType = GrpcClasses.Match.UserModel.class,
-      responseType = GrpcClasses.Match.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Match.UserModel,
-      GrpcClasses.Match.Empty> getCreateMatchForUserMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Match.UserModel, GrpcClasses.Match.Empty> getCreateMatchForUserMethod;
-    if ((getCreateMatchForUserMethod = MatchesGrpc.getCreateMatchForUserMethod) == null) {
-      synchronized (MatchesGrpc.class) {
-        if ((getCreateMatchForUserMethod = MatchesGrpc.getCreateMatchForUserMethod) == null) {
-          MatchesGrpc.getCreateMatchForUserMethod = getCreateMatchForUserMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Match.UserModel, GrpcClasses.Match.Empty>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createMatchForUser"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Match.UserModel.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Match.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new MatchesMethodDescriptorSupplier("createMatchForUser"))
-              .build();
-        }
-      }
-    }
-    return getCreateMatchForUserMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel,
-      GrpcClasses.Match.MatchModel> getCreateMatchMethod;
+      GrpcClasses.Match.Empty> getCreateMatchMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "createMatch",
       requestType = GrpcClasses.Match.MatchModel.class,
-      responseType = GrpcClasses.Match.MatchModel.class,
+      responseType = GrpcClasses.Match.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel,
-      GrpcClasses.Match.MatchModel> getCreateMatchMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel, GrpcClasses.Match.MatchModel> getCreateMatchMethod;
+      GrpcClasses.Match.Empty> getCreateMatchMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Match.MatchModel, GrpcClasses.Match.Empty> getCreateMatchMethod;
     if ((getCreateMatchMethod = MatchesGrpc.getCreateMatchMethod) == null) {
       synchronized (MatchesGrpc.class) {
         if ((getCreateMatchMethod = MatchesGrpc.getCreateMatchMethod) == null) {
           MatchesGrpc.getCreateMatchMethod = getCreateMatchMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Match.MatchModel, GrpcClasses.Match.MatchModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Match.MatchModel, GrpcClasses.Match.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createMatch"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GrpcClasses.Match.MatchModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Match.MatchModel.getDefaultInstance()))
+                  GrpcClasses.Match.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new MatchesMethodDescriptorSupplier("createMatch"))
               .build();
         }
@@ -289,7 +227,7 @@ public final class MatchesGrpc {
     /**
      */
     public void updateMatch(GrpcClasses.Match.MatchModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Match.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateMatchMethod(), responseObserver);
     }
 
@@ -309,22 +247,8 @@ public final class MatchesGrpc {
 
     /**
      */
-    public void isMatch(GrpcClasses.Match.MatchModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchResult> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getIsMatchMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void createMatchForUser(GrpcClasses.Match.UserModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Match.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMatchForUserMethod(), responseObserver);
-    }
-
-    /**
-     */
     public void createMatch(GrpcClasses.Match.MatchModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Match.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateMatchMethod(), responseObserver);
     }
 
@@ -342,7 +266,7 @@ public final class MatchesGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 GrpcClasses.Match.MatchModel,
-                GrpcClasses.Match.MatchModel>(
+                GrpcClasses.Match.Empty>(
                   this, METHODID_UPDATE_MATCH)))
           .addMethod(
             getDeleteMatchMethod(),
@@ -359,25 +283,11 @@ public final class MatchesGrpc {
                 GrpcClasses.Match.MatchModel>(
                   this, METHODID_FIND_BY_USER_ID)))
           .addMethod(
-            getIsMatchMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                GrpcClasses.Match.MatchModel,
-                GrpcClasses.Match.MatchResult>(
-                  this, METHODID_IS_MATCH)))
-          .addMethod(
-            getCreateMatchForUserMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                GrpcClasses.Match.UserModel,
-                GrpcClasses.Match.Empty>(
-                  this, METHODID_CREATE_MATCH_FOR_USER)))
-          .addMethod(
             getCreateMatchMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 GrpcClasses.Match.MatchModel,
-                GrpcClasses.Match.MatchModel>(
+                GrpcClasses.Match.Empty>(
                   this, METHODID_CREATE_MATCH)))
           .build();
     }
@@ -408,7 +318,7 @@ public final class MatchesGrpc {
     /**
      */
     public void updateMatch(GrpcClasses.Match.MatchModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Match.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateMatchMethod(), getCallOptions()), request, responseObserver);
     }
@@ -431,24 +341,8 @@ public final class MatchesGrpc {
 
     /**
      */
-    public void isMatch(GrpcClasses.Match.MatchModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchResult> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getIsMatchMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void createMatchForUser(GrpcClasses.Match.UserModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Match.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateMatchForUserMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void createMatch(GrpcClasses.Match.MatchModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.Match.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateMatchMethod(), getCallOptions()), request, responseObserver);
     }
@@ -477,7 +371,7 @@ public final class MatchesGrpc {
 
     /**
      */
-    public GrpcClasses.Match.MatchModel updateMatch(GrpcClasses.Match.MatchModel request) {
+    public GrpcClasses.Match.Empty updateMatch(GrpcClasses.Match.MatchModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateMatchMethod(), getCallOptions(), request);
     }
@@ -499,21 +393,7 @@ public final class MatchesGrpc {
 
     /**
      */
-    public GrpcClasses.Match.MatchResult isMatch(GrpcClasses.Match.MatchModel request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getIsMatchMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public GrpcClasses.Match.Empty createMatchForUser(GrpcClasses.Match.UserModel request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateMatchForUserMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public GrpcClasses.Match.MatchModel createMatch(GrpcClasses.Match.MatchModel request) {
+    public GrpcClasses.Match.Empty createMatch(GrpcClasses.Match.MatchModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateMatchMethod(), getCallOptions(), request);
     }
@@ -543,7 +423,7 @@ public final class MatchesGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Match.MatchModel> updateMatch(
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Match.Empty> updateMatch(
         GrpcClasses.Match.MatchModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateMatchMethod(), getCallOptions()), request);
@@ -559,23 +439,7 @@ public final class MatchesGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Match.MatchResult> isMatch(
-        GrpcClasses.Match.MatchModel request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getIsMatchMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Match.Empty> createMatchForUser(
-        GrpcClasses.Match.UserModel request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateMatchForUserMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Match.MatchModel> createMatch(
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Match.Empty> createMatch(
         GrpcClasses.Match.MatchModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateMatchMethod(), getCallOptions()), request);
@@ -586,9 +450,7 @@ public final class MatchesGrpc {
   private static final int METHODID_UPDATE_MATCH = 1;
   private static final int METHODID_DELETE_MATCH = 2;
   private static final int METHODID_FIND_BY_USER_ID = 3;
-  private static final int METHODID_IS_MATCH = 4;
-  private static final int METHODID_CREATE_MATCH_FOR_USER = 5;
-  private static final int METHODID_CREATE_MATCH = 6;
+  private static final int METHODID_CREATE_MATCH = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -613,7 +475,7 @@ public final class MatchesGrpc {
           break;
         case METHODID_UPDATE_MATCH:
           serviceImpl.updateMatch((GrpcClasses.Match.MatchModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchModel>) responseObserver);
+              (io.grpc.stub.StreamObserver<GrpcClasses.Match.Empty>) responseObserver);
           break;
         case METHODID_DELETE_MATCH:
           serviceImpl.deleteMatch((GrpcClasses.Match.MatchIdRequest) request,
@@ -623,17 +485,9 @@ public final class MatchesGrpc {
           serviceImpl.findByUserId((GrpcClasses.Match.UserIdRequest) request,
               (io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchModel>) responseObserver);
           break;
-        case METHODID_IS_MATCH:
-          serviceImpl.isMatch((GrpcClasses.Match.MatchModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchResult>) responseObserver);
-          break;
-        case METHODID_CREATE_MATCH_FOR_USER:
-          serviceImpl.createMatchForUser((GrpcClasses.Match.UserModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Match.Empty>) responseObserver);
-          break;
         case METHODID_CREATE_MATCH:
           serviceImpl.createMatch((GrpcClasses.Match.MatchModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Match.MatchModel>) responseObserver);
+              (io.grpc.stub.StreamObserver<GrpcClasses.Match.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -700,8 +554,6 @@ public final class MatchesGrpc {
               .addMethod(getUpdateMatchMethod())
               .addMethod(getDeleteMatchMethod())
               .addMethod(getFindByUserIdMethod())
-              .addMethod(getIsMatchMethod())
-              .addMethod(getCreateMatchForUserMethod())
               .addMethod(getCreateMatchMethod())
               .build();
         }
