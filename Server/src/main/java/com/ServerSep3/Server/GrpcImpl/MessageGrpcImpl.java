@@ -36,11 +36,17 @@ public class MessageGrpcImpl extends MessagesGrpc.MessagesImplBase {
 
     @Override
     public void saveMessage(Message.MessageModel request, StreamObserver<Message.MessageModel> responseObserver) {
-        super.saveMessage(request, responseObserver);
+        System.out.println("Save message");
+        service.saveMessage(new MessageModel(request.getId(), request.getUserSentId(), request.getChatId(), request.getDate(), request.getDate()));
+        responseObserver.onCompleted();
+        System.out.println("Message saved");
     }
 
     @Override
     public void deleteMessage(Message.MessageIdRequested request, StreamObserver<Message.MessageDeleted> responseObserver) {
-        super.deleteMessage(request, responseObserver);
+        System.out.println("deleting message");
+        service.deleteMessage((long) request.getId());
+        responseObserver.onCompleted();
+        System.out.println("Message deleted");
     }
 }
