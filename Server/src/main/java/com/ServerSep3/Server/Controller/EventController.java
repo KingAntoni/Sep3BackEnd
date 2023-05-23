@@ -19,24 +19,24 @@ public class EventController {
 
 
     @GetMapping
-    public List<EventModel> findAllUsers() {
+    public List<EventModel> findAllEvents() {
         return eventService.findAllEvents();
     }
 
-    @GetMapping("/id")
+    @GetMapping("/id/{id}")
     public EventModel findById(@PathVariable("id")int id) {
         return eventService.findById(id);
     }
 
     @PostMapping("/save")
-    public EventModel saveUser(@RequestBody EventModel event) {
+    public EventModel saveEvent(@RequestBody EventModel event) {
         return eventService.saveEvent(event);
     }
 
     @PostMapping("/update")
-    public EventModel updateUser(@RequestBody EventModel event){return eventService.updateEvent(event);}
+    public EventModel updateEvent(@RequestBody EventModel event){return eventService.updateEvent(event);}
 
-    @GetMapping("/delete")
-    public void deleteUser(@RequestBody long id){eventService.deleteUser(id);}
+    @GetMapping("/delete/{id}")
+    public void deleteEvent(@PathVariable("id")long id){eventService.deleteEvent(id);}
 
 }

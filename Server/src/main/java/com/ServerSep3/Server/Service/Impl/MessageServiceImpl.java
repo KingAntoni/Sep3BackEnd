@@ -1,7 +1,6 @@
 package com.ServerSep3.Server.Service.Impl;
 
-import com.ServerSep3.Server.Model.EventModel;
-import com.ServerSep3.Server.Model.Message;
+import com.ServerSep3.Server.Model.MessageModel;
 import com.ServerSep3.Server.Repository.MessageRepository;
 import com.ServerSep3.Server.Service.MessageService;
 import org.springframework.stereotype.Service;
@@ -18,18 +17,18 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public List<Message> findAllMessagesForAChat(int id) {
+    public List<MessageModel> findAllMessagesForAChat(int id) {
         return messageRepository.findByChatId(id);
     }
 
     @Override
-    public Message findById(int id) {
+    public MessageModel findById(int id) {
         return messageRepository.findById(id);
     }
 
     @Override
-    public Message saveMessage(Message message) {
-        return messageRepository.save(message);
+    public MessageModel saveMessage(MessageModel messageModel) {
+        return messageRepository.save(messageModel);
     }
 
     @Override

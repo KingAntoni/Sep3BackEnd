@@ -5,8 +5,8 @@ package GrpcClasses;
 service Events {
   rpc findAllEvents (Empty) returns (stream EventModel);
   rpc findById (EventIdRequest) returns (EventModel);
-  rpc saveEvent (EventModel) returns (EventModel);
-  rpc updateEvent (EventModel) returns (EventModel);
+  rpc saveEvent (EventModel) returns (Empty);
+  rpc updateEvent (EventModel) returns (Empty);
   rpc deleteEvent (EventIdRequest) returns (Empty);
 }
 

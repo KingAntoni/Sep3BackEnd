@@ -5,14 +5,13 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "userInEvents")
 public class UsersInEvents {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
     @Column
     private int eventId;
     @Column
     private int userid;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     public UsersInEvents(int id, int eventId, int userid) {
         this.id = id;
@@ -21,6 +20,7 @@ public class UsersInEvents {
     }
 
     public UsersInEvents() {
+
     }
 
     public int getEventId() {

@@ -28,16 +28,18 @@ public class MatchServiceImpl implements MatchService {
 
     @Override
     public MatchModel updateMatch(MatchModel matchModel) {
-        matchRepository.deleteById(Long.valueOf(matchModel.getId()));
+        MatchModel existing=matchRepository.findById(matchModel.getId());
         if(isMatch(matchModel)){
-            matchModel.setMatch(true);
+            existing.setMatch(true);
         }
-        return matchRepository.save(matchModel);
+        existing.setMatchUser2(matchModel.getMatchUser2());
+        existing.setMatchUser1(matchModel.getMatchUser2());
+        return matchRepository.save(existing);
     }
 
     @Override
-    public void deleteMatch(Long id) {
-        matchRepository.deleteById(id);
+    public void deleteMatch(MatchModel matchModel) {
+        matchRepository.deleteById((long) matchModel.getId());
     }
 
     @Override

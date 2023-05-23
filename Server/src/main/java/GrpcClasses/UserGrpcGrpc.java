@@ -108,28 +108,28 @@ public final class UserGrpcGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<GrpcClasses.User.UserModel,
-      GrpcClasses.User.UserModel> getUpdateUserMethod;
+      GrpcClasses.User.Empty> getUpdateUserMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "updateUser",
       requestType = GrpcClasses.User.UserModel.class,
-      responseType = GrpcClasses.User.UserModel.class,
+      responseType = GrpcClasses.User.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<GrpcClasses.User.UserModel,
-      GrpcClasses.User.UserModel> getUpdateUserMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.User.UserModel, GrpcClasses.User.UserModel> getUpdateUserMethod;
+      GrpcClasses.User.Empty> getUpdateUserMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.User.UserModel, GrpcClasses.User.Empty> getUpdateUserMethod;
     if ((getUpdateUserMethod = UserGrpcGrpc.getUpdateUserMethod) == null) {
       synchronized (UserGrpcGrpc.class) {
         if ((getUpdateUserMethod = UserGrpcGrpc.getUpdateUserMethod) == null) {
           UserGrpcGrpc.getUpdateUserMethod = getUpdateUserMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.User.UserModel, GrpcClasses.User.UserModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.User.UserModel, GrpcClasses.User.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   GrpcClasses.User.UserModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.User.UserModel.getDefaultInstance()))
+                  GrpcClasses.User.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new UserGrpcMethodDescriptorSupplier("updateUser"))
               .build();
         }
@@ -303,7 +303,7 @@ public final class UserGrpcGrpc {
     /**
      */
     public void updateUser(GrpcClasses.User.UserModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.User.UserModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.User.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateUserMethod(), responseObserver);
     }
 
@@ -356,7 +356,7 @@ public final class UserGrpcGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 GrpcClasses.User.UserModel,
-                GrpcClasses.User.UserModel>(
+                GrpcClasses.User.Empty>(
                   this, METHODID_UPDATE_USER)))
           .addMethod(
             getDeleteUserMethod(),
@@ -424,7 +424,7 @@ public final class UserGrpcGrpc {
     /**
      */
     public void updateUser(GrpcClasses.User.UserModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.User.UserModel> responseObserver) {
+        io.grpc.stub.StreamObserver<GrpcClasses.User.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request, responseObserver);
     }
@@ -492,7 +492,7 @@ public final class UserGrpcGrpc {
 
     /**
      */
-    public GrpcClasses.User.UserModel updateUser(GrpcClasses.User.UserModel request) {
+    public GrpcClasses.User.Empty updateUser(GrpcClasses.User.UserModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateUserMethod(), getCallOptions(), request);
     }
@@ -552,7 +552,7 @@ public final class UserGrpcGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.User.UserModel> updateUser(
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.User.Empty> updateUser(
         GrpcClasses.User.UserModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request);
@@ -614,7 +614,7 @@ public final class UserGrpcGrpc {
           break;
         case METHODID_UPDATE_USER:
           serviceImpl.updateUser((GrpcClasses.User.UserModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.User.UserModel>) responseObserver);
+              (io.grpc.stub.StreamObserver<GrpcClasses.User.Empty>) responseObserver);
           break;
         case METHODID_DELETE_USER:
           serviceImpl.deleteUser((GrpcClasses.User.GetById) request,

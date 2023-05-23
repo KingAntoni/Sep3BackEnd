@@ -28,8 +28,8 @@ public class ChatController {
         return chatService.saveChat(chatModel);
     }
 
-    @GetMapping("/delete")
-    public void deleteUser(@RequestBody long id){
+    @GetMapping("/delete/{id}")
+    public void deleteUser(@PathVariable("id")long id){
         chatService.deleteChat(id);
     }
 

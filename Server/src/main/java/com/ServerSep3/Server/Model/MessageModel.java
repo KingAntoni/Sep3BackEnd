@@ -2,11 +2,9 @@ package com.ServerSep3.Server.Model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
-
 @Entity
 @Table(name="message")
-public class Message {
+public class MessageModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -15,11 +13,11 @@ public class Message {
     @Column
     private int chatId;
     @Column
-    private Date date;
+    private String date;
     @Column
     private String message;
 
-    public Message(int id, int userSentId, int chatId, Date date, String message) {
+    public MessageModel(int id, int userSentId, int chatId, String date, String message) {
         this.id = id;
         this.userSentId = userSentId;
         this.chatId = chatId;
@@ -27,7 +25,7 @@ public class Message {
         this.message = message;
     }
 
-    public Message() {
+    public MessageModel() {
     }
 
     public int getId() {
@@ -54,11 +52,11 @@ public class Message {
         this.chatId = chatId;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

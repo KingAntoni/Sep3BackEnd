@@ -10,5 +10,5 @@ public interface EventService {
     EventModel findById(int id);
     EventModel saveEvent(EventModel eventModel);
     EventModel updateEvent(EventModel eventModel);
-    void deleteUser(Long id);
+    void deleteEvent(Long id);
 }

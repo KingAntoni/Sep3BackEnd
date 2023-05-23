@@ -33,12 +33,14 @@ public class EventsServiceImpl implements EventService {
 
     @Override
     public EventModel updateEvent(EventModel eventModel) {
-        deleteUser(Long.valueOf(eventModel.getId()));
+        EventModel existing= eventRepository.findById(eventModel.getId());
+        existing.setDescription(eventModel.getDescription());
+        existing.setTitle(eventModel.getTitle());
         return eventRepository.save(eventModel);
     }
 
     @Override
-    public void deleteUser(Long id) {
+    public void deleteEvent(Long id) {
         eventRepository.deleteById(id);
     }
 }
