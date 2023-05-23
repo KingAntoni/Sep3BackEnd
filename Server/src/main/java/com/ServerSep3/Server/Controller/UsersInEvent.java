@@ -25,12 +25,12 @@ public class UsersInEvent {
     }
 
     @PostMapping("/save")
-    public UsersInEvents save(UsersInEvents usersInEvents){
+    public UsersInEvents save(@RequestBody UsersInEvents usersInEvents){
         return usersInEventsService.saveUserInEvent(usersInEvents);
     }
 
     @GetMapping("/delete/{id}")
-    public void deleteUserFromEvent(UsersInEvents usersInEvents){
+    public void deleteUserFromEvent(@PathVariable("id") UsersInEvents usersInEvents){
         usersInEventsService.deleteUser(usersInEvents);
     }
 }
