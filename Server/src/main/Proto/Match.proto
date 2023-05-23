@@ -8,7 +8,6 @@ service Matches {
   rpc deleteMatch (MatchIdRequest) returns (Empty);
   rpc findByUserId (UserIdRequest) returns (stream MatchModel);
   rpc createMatch (MatchModel) returns (Empty);
-
 }
 
 message MatchModel {

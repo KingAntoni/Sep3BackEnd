@@ -8,7 +8,7 @@ import java.util.List;
 public interface MatchService {
     MatchModel findById(int id);
     MatchModel updateMatch(MatchModel matchModel);
-    void deleteMatch(MatchModel matchModel);
+    void deleteMatch(long id);
     List<MatchModel> findByUserId(int id);
     boolean isMatch(MatchModel matchModel);
     void CreateMatchForUser(UserModel userModel);
