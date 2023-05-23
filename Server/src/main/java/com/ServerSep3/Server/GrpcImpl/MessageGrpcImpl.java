@@ -48,7 +48,6 @@ public class MessageGrpcImpl extends MessagesGrpc.MessagesImplBase {
                 .build();
             listGrpc.add(messageModel);
         }
-
         for (Message.MessageModel messageModel : listGrpc) {
             responseObserver.onNext(messageModel);
         }

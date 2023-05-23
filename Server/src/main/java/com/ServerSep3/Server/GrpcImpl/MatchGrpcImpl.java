@@ -8,6 +8,9 @@ import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @GRpcService
 public class MatchGrpcImpl extends MatchesGrpc.MatchesImplBase {
 
@@ -50,7 +53,22 @@ public class MatchGrpcImpl extends MatchesGrpc.MatchesImplBase {
     @Override
     public void findByUserId(Match.UserIdRequest request, StreamObserver<Match.MatchModel> responseObserver) {
         System.out.println("find by user id");
-
+        List<MatchModel> list = service.findByUserId(request.getUserId());
+        List<Match.MatchModel> listGrpc = new ArrayList<>();
+        for (int i=0;i< list.size();i++) {
+            Match.MatchModel model = Match.MatchModel.newBuilder()
+                .setId(list.get(i).getId())
+                .setUserId1(list.get(i).getUserId1())
+                .setUserId2(list.get(i).getUserId2())
+                .setMatchUser1(list.get(i).getMatchUser1())
+                .setMatchUser2(list.get(i).getMatchUser2())
+                .setMatch(list.get(i).getMatch())
+                .build();
+            listGrpc.add(model);
+        }
+        for (Match.MatchModel matchModel : listGrpc) {
+            responseObserver.onNext(matchModel);
+        }
 
         responseObserver.onCompleted();
         System.out.println("all matches sent");
