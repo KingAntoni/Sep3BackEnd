@@ -1,8 +1,6 @@
 package com.ServerSep3.Server.Service;
 
-import com.ServerSep3.Server.Model.EventModel;
 import com.ServerSep3.Server.Model.MatchModel;
-import com.ServerSep3.Server.Model.Message;
 import com.ServerSep3.Server.Model.UserModel;
 
 import java.util.List;

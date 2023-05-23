@@ -4,12 +4,10 @@ package GrpcClasses;
 
 service Matches {
   rpc findById(MatchIdRequest) returns (MatchModel);
-  rpc updateMatch (MatchModel) returns (MatchModel);
+  rpc updateMatch (MatchModel) returns (Empty);
   rpc deleteMatch (MatchIdRequest) returns (Empty);
   rpc findByUserId (UserIdRequest) returns (stream MatchModel);
-  rpc isMatch (MatchModel) returns (MatchResult);
-  rpc createMatchForUser (UserModel) returns (Empty);
-  rpc createMatch (MatchModel) returns (MatchModel);
+  rpc createMatch (MatchModel) returns (Empty);
 }
 
 message MatchModel {

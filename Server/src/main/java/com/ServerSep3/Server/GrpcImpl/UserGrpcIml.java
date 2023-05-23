@@ -8,6 +8,9 @@ import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @GRpcService
 public class UserGrpcIml extends UserGrpcGrpc.UserGrpcImplBase {
 
@@ -86,7 +89,44 @@ public class UserGrpcIml extends UserGrpcGrpc.UserGrpcImplBase {
 
     @Override
     public void findAll(User.Empty request, StreamObserver<User.UserModel> responseObserver) {
-        super.findAll(request, responseObserver);
+        System.out.println("Find all");
+        List<UserModel> list= new ArrayList<>();
+        List<User.UserModel> listGrpc= new ArrayList<>();
+        list= userService.findAllUsers();
+        for (int i=0;i< list.size();i++){
+            User.UserModel userModel= User.UserModel.newBuilder()
+                    .setFirstName(list.get(i).getFirstName())
+                    .setId(list.get(i).getId())
+                    .setUsername(list.get(i).getUsername())
+                    .setPassword(list.get(i).getPassword())
+                    .setEmail(list.get(i).getEmail())
+                    .setLastName(list.get(i).getLastName())
+                    .setBirthday(list.get(i).getBirthday())
+                    .setDescription(list.get(i).getDescription())
+                    .setNumberOfMatches(list.get(i).getNumber_of_matches())
+                    .setNote(list.get(i).getNote())
+                    .setPhoto1(list.get(i).getPhoto1())
+                    .setPhoto2(list.get(i).getPhoto2())
+                    .setPhoto3(list.get(i).getPhoto3())
+                    .setPhoto4(list.get(i).getPhoto4())
+                    .setPhoto5(list.get(i).getPhoto5())
+                    .setGender(list.get(i).getGender())
+                    .setPreference(list.get(i).getPreference())
+                    .setHoroscope(list.get(i).getHoroscope())
+                    .setOccupation(list.get(i).getOccupation())
+                    .setCity(list.get(i).getCity())
+                    .setEducation(list.get(i).getEducation())
+                    .setDrink(list.get(i).isDrink())
+                    .setAdministrator(list.get(i).isAdministrator())
+                    .build();
+            listGrpc.add(userModel);
+
+        }
+        for (int i=0;i< listGrpc.size();i++){
+            responseObserver.onNext(listGrpc.get(i));
+        }
+        responseObserver.onCompleted();
+        System.out.println("Users send");
     }
 
     @Override

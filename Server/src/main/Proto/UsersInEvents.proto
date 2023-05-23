@@ -4,7 +4,7 @@ package GrpcClasses;
 
 service UsersInEvents {
   rpc findAllUsersForOneEvent (RequestUsersInEventId) returns (stream UserModel);
-  rpc saveUsersInEvents (UsersInEventsModel) returns (UsersInEventsModel);
+  rpc saveUsersInEvents (UsersInEventsModel) returns (Empty);
   rpc deleteUser (UsersInEventsModel) returns (Empty);
 }
 

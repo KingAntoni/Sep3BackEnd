@@ -1,6 +1,6 @@
 package com.ServerSep3.Server.Controller;
 
-import com.ServerSep3.Server.Model.Message;
+import com.ServerSep3.Server.Model.MessageModel;
 import com.ServerSep3.Server.Service.MessageService;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,18 +16,18 @@ public class MessageController {
     }
 
     @GetMapping("/findAll/{id}")
-    public List<Message> findAllMessagesForAChat(@PathVariable("id")int id){
+    public List<MessageModel> findAllMessagesForAChat(@PathVariable("id")int id){
         return messageService.findAllMessagesForAChat(id);
     }
 
     @GetMapping("/{id}")
-    public Message findById(@PathVariable("id")int id){
+    public MessageModel findById(@PathVariable("id")int id){
         return messageService.findById(id);
     }
 
     @PostMapping("/save")
-    public Message save(@RequestBody Message message){
-        return messageService.saveMessage(message);
+    public MessageModel save(@RequestBody MessageModel messageModel){
+        return messageService.saveMessage(messageModel);
     }
 
     @GetMapping("/delete/{id}")

@@ -1,14 +1,12 @@
 package com.ServerSep3.Server.Service;
 
-import com.ServerSep3.Server.Model.EventModel;
-import com.ServerSep3.Server.Model.Message;
-import com.ServerSep3.Server.Model.UsersInEvents;
+import com.ServerSep3.Server.Model.MessageModel;
 
 import java.util.List;
 
 public interface MessageService {
-    List<Message> findAllMessagesForAChat(int id);
-    Message findById(int id);
-    Message saveMessage(Message message);
+    List<MessageModel> findAllMessagesForAChat(int id);
+    MessageModel findById(int id);
+    MessageModel saveMessage(MessageModel messageModel);
     void deleteMessage(Long id);
 }

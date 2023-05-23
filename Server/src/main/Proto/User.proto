@@ -3,7 +3,7 @@ syntax= "proto3";
 package GrpcClasses;
 
 service UserGrpc{
-  rpc saveUser(UserModel) returns (UserModel){}
+  rpc saveUser(UserModel) returns (Empty){}
   rpc findById(GetById) returns (UserModel){}
   rpc findAll(Empty) returns (stream UserModel){}
   rpc updateUser(UserModel) returns (Empty){}
