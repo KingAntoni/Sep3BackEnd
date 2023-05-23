@@ -38,8 +38,8 @@ public class MatchServiceImpl implements MatchService {
     }
 
     @Override
-    public void deleteMatch(MatchModel matchModel) {
-        matchRepository.deleteById((long) matchModel.getId());
+    public void deleteMatch(Long id) {
+        matchRepository.deleteById((id));
     }
 
     @Override

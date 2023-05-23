@@ -9,6 +9,9 @@ import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @GRpcService
 public class MessageGrpcImpl extends MessagesGrpc.MessagesImplBase {
 
@@ -31,7 +34,26 @@ public class MessageGrpcImpl extends MessagesGrpc.MessagesImplBase {
 
     @Override
     public void findAllMessagesForAChat(Message.ChatIdRequested request, StreamObserver<Message.MessageModel> responseObserver) {
-        super.findAllMessagesForAChat(request, responseObserver);
+
+        System.out.println("find all messages");
+        List<MessageModel> list = service.findAllMessagesForAChat(request.getChatId());
+        List<Message.MessageModel> listGrpc = new ArrayList<>();
+        for (int i=0;i< list.size();i++){
+            Message.MessageModel messageModel = Message.MessageModel.newBuilder()
+                .setId(list.get(i).getId())
+                .setMessage(list.get(i).getMessage())
+                .setChatId(list.get(i).getChatId())
+                .setDate(list.get(i).getDate())
+                .setUserSentId(list.get(i).getUserSentId())
+                .build();
+            listGrpc.add(messageModel);
+        }
+
+        for (Message.MessageModel messageModel : listGrpc) {
+            responseObserver.onNext(messageModel);
+        }
+        responseObserver.onCompleted();
+        System.out.println("Messages send");
     }
 
     @Override

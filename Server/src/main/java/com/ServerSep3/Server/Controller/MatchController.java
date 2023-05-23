@@ -28,7 +28,7 @@ public class MatchController {
         return matchService.createMatch(matchModel);
     }
 
-    @GetMapping("/delete")
-    public void deleteMatch(@RequestBody MatchModel matchModel){matchService.deleteMatch(matchModel);}
+    @GetMapping("/delete/{id}")
+    public void deleteMatch(@PathVariable("id")long id){matchService.deleteMatch(id);}
 
 }
