@@ -1,10 +1,9 @@
 package com.ServerSep3.Server.GrpcImpl;
 
-import GrpcClasses.UsersInEventsGrpc;
-import GrpcClasses.UsersInEventsOuterClass;
+import GrpcClasses.UserInEvents.UsersInEventsGrpc;
+import GrpcClasses.UserInEvents.UsersInEventsOuterClass;
 import com.ServerSep3.Server.Model.UserModel;
 import com.ServerSep3.Server.Model.UsersInEvents;
-import com.ServerSep3.Server.Service.Impl.UsersInEventsImpl;
 import com.ServerSep3.Server.Service.UsersInEventsService;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;

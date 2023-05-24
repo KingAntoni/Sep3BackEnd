@@ -1,4 +1,4 @@
-package GrpcClasses;
+package GrpcClasses.Chat;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -11,32 +11,32 @@ public final class ChatsGrpc {
 
   private ChatsGrpc() {}
 
-  public static final String SERVICE_NAME = "GrpcClasses.Chats";
+  public static final String SERVICE_NAME = "GrpcClasses.Chat.Chats";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Chat.lookUpById,
-      GrpcClasses.Chat.ChatModel> getFindByIdMethod;
+  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpById,
+      GrpcClasses.Chat.Chat.ChatModel> getFindByIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findById",
-      requestType = GrpcClasses.Chat.lookUpById.class,
-      responseType = GrpcClasses.Chat.ChatModel.class,
+      requestType = GrpcClasses.Chat.Chat.lookUpById.class,
+      responseType = GrpcClasses.Chat.Chat.ChatModel.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Chat.lookUpById,
-      GrpcClasses.Chat.ChatModel> getFindByIdMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Chat.lookUpById, GrpcClasses.Chat.ChatModel> getFindByIdMethod;
+  public static io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpById,
+      GrpcClasses.Chat.Chat.ChatModel> getFindByIdMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpById, GrpcClasses.Chat.Chat.ChatModel> getFindByIdMethod;
     if ((getFindByIdMethod = ChatsGrpc.getFindByIdMethod) == null) {
       synchronized (ChatsGrpc.class) {
         if ((getFindByIdMethod = ChatsGrpc.getFindByIdMethod) == null) {
           ChatsGrpc.getFindByIdMethod = getFindByIdMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Chat.lookUpById, GrpcClasses.Chat.ChatModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Chat.Chat.lookUpById, GrpcClasses.Chat.Chat.ChatModel>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findById"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Chat.lookUpById.getDefaultInstance()))
+                  GrpcClasses.Chat.Chat.lookUpById.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Chat.ChatModel.getDefaultInstance()))
+                  GrpcClasses.Chat.Chat.ChatModel.getDefaultInstance()))
               .setSchemaDescriptor(new ChatsMethodDescriptorSupplier("findById"))
               .build();
         }
@@ -45,29 +45,29 @@ public final class ChatsGrpc {
     return getFindByIdMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Chat.ChatModel,
-      GrpcClasses.Chat.Empty> getSaveChatMethod;
+  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.ChatModel,
+      GrpcClasses.Chat.Chat.Empty> getSaveChatMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "saveChat",
-      requestType = GrpcClasses.Chat.ChatModel.class,
-      responseType = GrpcClasses.Chat.Empty.class,
+      requestType = GrpcClasses.Chat.Chat.ChatModel.class,
+      responseType = GrpcClasses.Chat.Chat.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Chat.ChatModel,
-      GrpcClasses.Chat.Empty> getSaveChatMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Chat.ChatModel, GrpcClasses.Chat.Empty> getSaveChatMethod;
+  public static io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.ChatModel,
+      GrpcClasses.Chat.Chat.Empty> getSaveChatMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.ChatModel, GrpcClasses.Chat.Chat.Empty> getSaveChatMethod;
     if ((getSaveChatMethod = ChatsGrpc.getSaveChatMethod) == null) {
       synchronized (ChatsGrpc.class) {
         if ((getSaveChatMethod = ChatsGrpc.getSaveChatMethod) == null) {
           ChatsGrpc.getSaveChatMethod = getSaveChatMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Chat.ChatModel, GrpcClasses.Chat.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Chat.Chat.ChatModel, GrpcClasses.Chat.Chat.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "saveChat"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Chat.ChatModel.getDefaultInstance()))
+                  GrpcClasses.Chat.Chat.ChatModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Chat.Empty.getDefaultInstance()))
+                  GrpcClasses.Chat.Chat.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ChatsMethodDescriptorSupplier("saveChat"))
               .build();
         }
@@ -76,29 +76,29 @@ public final class ChatsGrpc {
     return getSaveChatMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Chat.lookUpById,
-      GrpcClasses.Chat.Empty> getDeleteChatMethod;
+  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpById,
+      GrpcClasses.Chat.Chat.Empty> getDeleteChatMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "deleteChat",
-      requestType = GrpcClasses.Chat.lookUpById.class,
-      responseType = GrpcClasses.Chat.Empty.class,
+      requestType = GrpcClasses.Chat.Chat.lookUpById.class,
+      responseType = GrpcClasses.Chat.Chat.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Chat.lookUpById,
-      GrpcClasses.Chat.Empty> getDeleteChatMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Chat.lookUpById, GrpcClasses.Chat.Empty> getDeleteChatMethod;
+  public static io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpById,
+      GrpcClasses.Chat.Chat.Empty> getDeleteChatMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpById, GrpcClasses.Chat.Chat.Empty> getDeleteChatMethod;
     if ((getDeleteChatMethod = ChatsGrpc.getDeleteChatMethod) == null) {
       synchronized (ChatsGrpc.class) {
         if ((getDeleteChatMethod = ChatsGrpc.getDeleteChatMethod) == null) {
           ChatsGrpc.getDeleteChatMethod = getDeleteChatMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Chat.lookUpById, GrpcClasses.Chat.Empty>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Chat.Chat.lookUpById, GrpcClasses.Chat.Chat.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "deleteChat"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Chat.lookUpById.getDefaultInstance()))
+                  GrpcClasses.Chat.Chat.lookUpById.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Chat.Empty.getDefaultInstance()))
+                  GrpcClasses.Chat.Chat.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new ChatsMethodDescriptorSupplier("deleteChat"))
               .build();
         }
@@ -107,29 +107,29 @@ public final class ChatsGrpc {
     return getDeleteChatMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Chat.lookUpByUserId,
-      GrpcClasses.Chat.ChatModel> getFindByUserIdMethod;
+  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpByUserId,
+      GrpcClasses.Chat.Chat.ChatModel> getFindByUserIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findByUserId",
-      requestType = GrpcClasses.Chat.lookUpByUserId.class,
-      responseType = GrpcClasses.Chat.ChatModel.class,
+      requestType = GrpcClasses.Chat.Chat.lookUpByUserId.class,
+      responseType = GrpcClasses.Chat.Chat.ChatModel.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Chat.lookUpByUserId,
-      GrpcClasses.Chat.ChatModel> getFindByUserIdMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Chat.lookUpByUserId, GrpcClasses.Chat.ChatModel> getFindByUserIdMethod;
+  public static io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpByUserId,
+      GrpcClasses.Chat.Chat.ChatModel> getFindByUserIdMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpByUserId, GrpcClasses.Chat.Chat.ChatModel> getFindByUserIdMethod;
     if ((getFindByUserIdMethod = ChatsGrpc.getFindByUserIdMethod) == null) {
       synchronized (ChatsGrpc.class) {
         if ((getFindByUserIdMethod = ChatsGrpc.getFindByUserIdMethod) == null) {
           ChatsGrpc.getFindByUserIdMethod = getFindByUserIdMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Chat.lookUpByUserId, GrpcClasses.Chat.ChatModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Chat.Chat.lookUpByUserId, GrpcClasses.Chat.Chat.ChatModel>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findByUserId"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Chat.lookUpByUserId.getDefaultInstance()))
+                  GrpcClasses.Chat.Chat.lookUpByUserId.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Chat.ChatModel.getDefaultInstance()))
+                  GrpcClasses.Chat.Chat.ChatModel.getDefaultInstance()))
               .setSchemaDescriptor(new ChatsMethodDescriptorSupplier("findByUserId"))
               .build();
         }
@@ -188,29 +188,29 @@ public final class ChatsGrpc {
 
     /**
      */
-    public void findById(GrpcClasses.Chat.lookUpById request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.ChatModel> responseObserver) {
+    public void findById(GrpcClasses.Chat.Chat.lookUpById request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.ChatModel> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindByIdMethod(), responseObserver);
     }
 
     /**
      */
-    public void saveChat(GrpcClasses.Chat.ChatModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Empty> responseObserver) {
+    public void saveChat(GrpcClasses.Chat.Chat.ChatModel request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveChatMethod(), responseObserver);
     }
 
     /**
      */
-    public void deleteChat(GrpcClasses.Chat.lookUpById request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Empty> responseObserver) {
+    public void deleteChat(GrpcClasses.Chat.Chat.lookUpById request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteChatMethod(), responseObserver);
     }
 
     /**
      */
-    public void findByUserId(GrpcClasses.Chat.lookUpByUserId request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.ChatModel> responseObserver) {
+    public void findByUserId(GrpcClasses.Chat.Chat.lookUpByUserId request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.ChatModel> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindByUserIdMethod(), responseObserver);
     }
 
@@ -220,29 +220,29 @@ public final class ChatsGrpc {
             getFindByIdMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                GrpcClasses.Chat.lookUpById,
-                GrpcClasses.Chat.ChatModel>(
+                GrpcClasses.Chat.Chat.lookUpById,
+                GrpcClasses.Chat.Chat.ChatModel>(
                   this, METHODID_FIND_BY_ID)))
           .addMethod(
             getSaveChatMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                GrpcClasses.Chat.ChatModel,
-                GrpcClasses.Chat.Empty>(
+                GrpcClasses.Chat.Chat.ChatModel,
+                GrpcClasses.Chat.Chat.Empty>(
                   this, METHODID_SAVE_CHAT)))
           .addMethod(
             getDeleteChatMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                GrpcClasses.Chat.lookUpById,
-                GrpcClasses.Chat.Empty>(
+                GrpcClasses.Chat.Chat.lookUpById,
+                GrpcClasses.Chat.Chat.Empty>(
                   this, METHODID_DELETE_CHAT)))
           .addMethod(
             getFindByUserIdMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                GrpcClasses.Chat.lookUpByUserId,
-                GrpcClasses.Chat.ChatModel>(
+                GrpcClasses.Chat.Chat.lookUpByUserId,
+                GrpcClasses.Chat.Chat.ChatModel>(
                   this, METHODID_FIND_BY_USER_ID)))
           .build();
     }
@@ -264,32 +264,32 @@ public final class ChatsGrpc {
 
     /**
      */
-    public void findById(GrpcClasses.Chat.lookUpById request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.ChatModel> responseObserver) {
+    public void findById(GrpcClasses.Chat.Chat.lookUpById request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.ChatModel> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindByIdMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void saveChat(GrpcClasses.Chat.ChatModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Empty> responseObserver) {
+    public void saveChat(GrpcClasses.Chat.Chat.ChatModel request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSaveChatMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void deleteChat(GrpcClasses.Chat.lookUpById request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Empty> responseObserver) {
+    public void deleteChat(GrpcClasses.Chat.Chat.lookUpById request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteChatMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void findByUserId(GrpcClasses.Chat.lookUpByUserId request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Chat.ChatModel> responseObserver) {
+    public void findByUserId(GrpcClasses.Chat.Chat.lookUpByUserId request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.ChatModel> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindByUserIdMethod(), getCallOptions()), request, responseObserver);
     }
@@ -311,28 +311,28 @@ public final class ChatsGrpc {
 
     /**
      */
-    public GrpcClasses.Chat.ChatModel findById(GrpcClasses.Chat.lookUpById request) {
+    public GrpcClasses.Chat.Chat.ChatModel findById(GrpcClasses.Chat.Chat.lookUpById request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindByIdMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public GrpcClasses.Chat.Empty saveChat(GrpcClasses.Chat.ChatModel request) {
+    public GrpcClasses.Chat.Chat.Empty saveChat(GrpcClasses.Chat.Chat.ChatModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSaveChatMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public GrpcClasses.Chat.Empty deleteChat(GrpcClasses.Chat.lookUpById request) {
+    public GrpcClasses.Chat.Chat.Empty deleteChat(GrpcClasses.Chat.Chat.lookUpById request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteChatMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public GrpcClasses.Chat.ChatModel findByUserId(GrpcClasses.Chat.lookUpByUserId request) {
+    public GrpcClasses.Chat.Chat.ChatModel findByUserId(GrpcClasses.Chat.Chat.lookUpByUserId request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindByUserIdMethod(), getCallOptions(), request);
     }
@@ -354,32 +354,32 @@ public final class ChatsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.ChatModel> findById(
-        GrpcClasses.Chat.lookUpById request) {
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.Chat.ChatModel> findById(
+        GrpcClasses.Chat.Chat.lookUpById request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindByIdMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.Empty> saveChat(
-        GrpcClasses.Chat.ChatModel request) {
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.Chat.Empty> saveChat(
+        GrpcClasses.Chat.Chat.ChatModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSaveChatMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.Empty> deleteChat(
-        GrpcClasses.Chat.lookUpById request) {
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.Chat.Empty> deleteChat(
+        GrpcClasses.Chat.Chat.lookUpById request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteChatMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.ChatModel> findByUserId(
-        GrpcClasses.Chat.lookUpByUserId request) {
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.Chat.ChatModel> findByUserId(
+        GrpcClasses.Chat.Chat.lookUpByUserId request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindByUserIdMethod(), getCallOptions()), request);
     }
@@ -408,20 +408,20 @@ public final class ChatsGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_FIND_BY_ID:
-          serviceImpl.findById((GrpcClasses.Chat.lookUpById) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.ChatModel>) responseObserver);
+          serviceImpl.findById((GrpcClasses.Chat.Chat.lookUpById) request,
+              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.ChatModel>) responseObserver);
           break;
         case METHODID_SAVE_CHAT:
-          serviceImpl.saveChat((GrpcClasses.Chat.ChatModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.Empty>) responseObserver);
+          serviceImpl.saveChat((GrpcClasses.Chat.Chat.ChatModel) request,
+              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.Empty>) responseObserver);
           break;
         case METHODID_DELETE_CHAT:
-          serviceImpl.deleteChat((GrpcClasses.Chat.lookUpById) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.Empty>) responseObserver);
+          serviceImpl.deleteChat((GrpcClasses.Chat.Chat.lookUpById) request,
+              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.Empty>) responseObserver);
           break;
         case METHODID_FIND_BY_USER_ID:
-          serviceImpl.findByUserId((GrpcClasses.Chat.lookUpByUserId) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.ChatModel>) responseObserver);
+          serviceImpl.findByUserId((GrpcClasses.Chat.Chat.lookUpByUserId) request,
+              (io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.ChatModel>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -445,7 +445,7 @@ public final class ChatsGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return GrpcClasses.Chat.getDescriptor();
+      return GrpcClasses.Chat.Chat.getDescriptor();
     }
 
     @java.lang.Override

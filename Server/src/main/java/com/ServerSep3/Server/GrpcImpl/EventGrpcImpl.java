@@ -1,12 +1,14 @@
 package com.ServerSep3.Server.GrpcImpl;
 
-import GrpcClasses.Event;
-import GrpcClasses.EventsGrpc;
+import GrpcClasses.Event.Event;
+import GrpcClasses.Event.EventsGrpc;
 import com.ServerSep3.Server.Model.EventModel;
 import com.ServerSep3.Server.Service.EventService;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 @GRpcService
 public class EventGrpcImpl extends EventsGrpc.EventsImplBase {
@@ -15,9 +17,22 @@ public class EventGrpcImpl extends EventsGrpc.EventsImplBase {
     @Autowired
     EventService service;
 
+
     @Override
     public void findAllEvents(Event.Empty request, StreamObserver<Event.EventModel> responseObserver) {
-        super.findAllEvents(request, responseObserver);
+        System.out.println("Find all evnts");
+        List<EventModel> events= service.findAllEvents();
+        for (int i=0; i<events.size();i++){
+            Event.EventModel reponse= Event.EventModel.newBuilder()
+                    .setDescription(events.get(i).getDescription())
+                    .setTitle(events.get(i).getTitle())
+                    .setId(events.get(i).getId())
+                    .setMadeById(events.get(i).getMadeById())
+                    .build();
+            responseObserver.onNext(reponse);
+        }
+        responseObserver.onCompleted();
+        System.out.println("all events found");
     }
 
     @Override

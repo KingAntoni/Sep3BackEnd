@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package GrpcClasses;
+package GrpcClasses.UserInEvents;
 
 service UsersInEvents {
   rpc findAllUsersForOneEvent (RequestUsersInEventId) returns (stream UserModel);

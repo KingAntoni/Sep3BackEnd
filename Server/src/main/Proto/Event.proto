@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package GrpcClasses;
+package GrpcClasses.Event;
 
 service Events {
   rpc findAllEvents (Empty) returns (stream EventModel);

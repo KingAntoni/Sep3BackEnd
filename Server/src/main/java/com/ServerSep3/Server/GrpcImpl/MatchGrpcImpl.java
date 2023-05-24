@@ -1,7 +1,7 @@
 package com.ServerSep3.Server.GrpcImpl;
 
-import GrpcClasses.Match;
-import GrpcClasses.MatchesGrpc;
+import GrpcClasses.Match.Match;
+import GrpcClasses.Match.MatchesGrpc;
 import com.ServerSep3.Server.Model.MatchModel;
 import com.ServerSep3.Server.Service.MatchService;
 import io.grpc.stub.StreamObserver;
@@ -22,13 +22,13 @@ public class MatchGrpcImpl extends MatchesGrpc.MatchesImplBase {
         System.out.println("Finding match");
         MatchModel matchModel = service.findById(request.getId());
         Match.MatchModel response = Match.MatchModel.newBuilder()
-            .setMatch(matchModel.getMatch())
-            .setId(matchModel.getId())
-            .setMatchUser1(matchModel.getMatchUser1())
-            .setMatchUser2(matchModel.getMatchUser2())
-            .setUserId1(matchModel.getUserId1())
-            .setUserId2(matchModel.getUserId2())
-            .build();
+                .setMatch(matchModel.getMatch())
+                .setId(matchModel.getId())
+                .setMatchUser1(matchModel.getMatchUser1())
+                .setMatchUser2(matchModel.getMatchUser2())
+                .setUserId1(matchModel.getUserId1())
+                .setUserId2(matchModel.getUserId2())
+                .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
         System.out.println("Match find");

@@ -1,4 +1,4 @@
-package GrpcClasses;
+package GrpcClasses.Message;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -11,32 +11,32 @@ public final class MessagesGrpc {
 
   private MessagesGrpc() {}
 
-  public static final String SERVICE_NAME = "GrpcClasses.Messages";
+  public static final String SERVICE_NAME = "GrpcClasses.Message.Messages";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Message.MessageIdRequested,
-      GrpcClasses.Message.MessageModel> getFindByIdMethod;
+  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Message.Message.MessageIdRequested,
+      GrpcClasses.Message.Message.MessageModel> getFindByIdMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findById",
-      requestType = GrpcClasses.Message.MessageIdRequested.class,
-      responseType = GrpcClasses.Message.MessageModel.class,
+      requestType = GrpcClasses.Message.Message.MessageIdRequested.class,
+      responseType = GrpcClasses.Message.Message.MessageModel.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Message.MessageIdRequested,
-      GrpcClasses.Message.MessageModel> getFindByIdMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Message.MessageIdRequested, GrpcClasses.Message.MessageModel> getFindByIdMethod;
+  public static io.grpc.MethodDescriptor<GrpcClasses.Message.Message.MessageIdRequested,
+      GrpcClasses.Message.Message.MessageModel> getFindByIdMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Message.Message.MessageIdRequested, GrpcClasses.Message.Message.MessageModel> getFindByIdMethod;
     if ((getFindByIdMethod = MessagesGrpc.getFindByIdMethod) == null) {
       synchronized (MessagesGrpc.class) {
         if ((getFindByIdMethod = MessagesGrpc.getFindByIdMethod) == null) {
           MessagesGrpc.getFindByIdMethod = getFindByIdMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Message.MessageIdRequested, GrpcClasses.Message.MessageModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Message.Message.MessageIdRequested, GrpcClasses.Message.Message.MessageModel>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findById"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Message.MessageIdRequested.getDefaultInstance()))
+                  GrpcClasses.Message.Message.MessageIdRequested.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Message.MessageModel.getDefaultInstance()))
+                  GrpcClasses.Message.Message.MessageModel.getDefaultInstance()))
               .setSchemaDescriptor(new MessagesMethodDescriptorSupplier("findById"))
               .build();
         }
@@ -45,29 +45,29 @@ public final class MessagesGrpc {
     return getFindByIdMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Message.ChatIdRequested,
-      GrpcClasses.Message.MessageModel> getFindAllMessagesForAChatMethod;
+  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Message.Message.ChatIdRequested,
+      GrpcClasses.Message.Message.MessageModel> getFindAllMessagesForAChatMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findAllMessagesForAChat",
-      requestType = GrpcClasses.Message.ChatIdRequested.class,
-      responseType = GrpcClasses.Message.MessageModel.class,
+      requestType = GrpcClasses.Message.Message.ChatIdRequested.class,
+      responseType = GrpcClasses.Message.Message.MessageModel.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Message.ChatIdRequested,
-      GrpcClasses.Message.MessageModel> getFindAllMessagesForAChatMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Message.ChatIdRequested, GrpcClasses.Message.MessageModel> getFindAllMessagesForAChatMethod;
+  public static io.grpc.MethodDescriptor<GrpcClasses.Message.Message.ChatIdRequested,
+      GrpcClasses.Message.Message.MessageModel> getFindAllMessagesForAChatMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Message.Message.ChatIdRequested, GrpcClasses.Message.Message.MessageModel> getFindAllMessagesForAChatMethod;
     if ((getFindAllMessagesForAChatMethod = MessagesGrpc.getFindAllMessagesForAChatMethod) == null) {
       synchronized (MessagesGrpc.class) {
         if ((getFindAllMessagesForAChatMethod = MessagesGrpc.getFindAllMessagesForAChatMethod) == null) {
           MessagesGrpc.getFindAllMessagesForAChatMethod = getFindAllMessagesForAChatMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Message.ChatIdRequested, GrpcClasses.Message.MessageModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Message.Message.ChatIdRequested, GrpcClasses.Message.Message.MessageModel>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findAllMessagesForAChat"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Message.ChatIdRequested.getDefaultInstance()))
+                  GrpcClasses.Message.Message.ChatIdRequested.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Message.MessageModel.getDefaultInstance()))
+                  GrpcClasses.Message.Message.MessageModel.getDefaultInstance()))
               .setSchemaDescriptor(new MessagesMethodDescriptorSupplier("findAllMessagesForAChat"))
               .build();
         }
@@ -76,29 +76,29 @@ public final class MessagesGrpc {
     return getFindAllMessagesForAChatMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Message.MessageModel,
-      GrpcClasses.Message.MessageModel> getSaveMessageMethod;
+  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Message.Message.MessageModel,
+      GrpcClasses.Message.Message.MessageModel> getSaveMessageMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "saveMessage",
-      requestType = GrpcClasses.Message.MessageModel.class,
-      responseType = GrpcClasses.Message.MessageModel.class,
+      requestType = GrpcClasses.Message.Message.MessageModel.class,
+      responseType = GrpcClasses.Message.Message.MessageModel.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Message.MessageModel,
-      GrpcClasses.Message.MessageModel> getSaveMessageMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Message.MessageModel, GrpcClasses.Message.MessageModel> getSaveMessageMethod;
+  public static io.grpc.MethodDescriptor<GrpcClasses.Message.Message.MessageModel,
+      GrpcClasses.Message.Message.MessageModel> getSaveMessageMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Message.Message.MessageModel, GrpcClasses.Message.Message.MessageModel> getSaveMessageMethod;
     if ((getSaveMessageMethod = MessagesGrpc.getSaveMessageMethod) == null) {
       synchronized (MessagesGrpc.class) {
         if ((getSaveMessageMethod = MessagesGrpc.getSaveMessageMethod) == null) {
           MessagesGrpc.getSaveMessageMethod = getSaveMessageMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Message.MessageModel, GrpcClasses.Message.MessageModel>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Message.Message.MessageModel, GrpcClasses.Message.Message.MessageModel>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "saveMessage"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Message.MessageModel.getDefaultInstance()))
+                  GrpcClasses.Message.Message.MessageModel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Message.MessageModel.getDefaultInstance()))
+                  GrpcClasses.Message.Message.MessageModel.getDefaultInstance()))
               .setSchemaDescriptor(new MessagesMethodDescriptorSupplier("saveMessage"))
               .build();
         }
@@ -107,29 +107,29 @@ public final class MessagesGrpc {
     return getSaveMessageMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Message.MessageIdRequested,
-      GrpcClasses.Message.MessageDeleted> getDeleteMessageMethod;
+  private static volatile io.grpc.MethodDescriptor<GrpcClasses.Message.Message.MessageIdRequested,
+      GrpcClasses.Message.Message.MessageDeleted> getDeleteMessageMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "deleteMessage",
-      requestType = GrpcClasses.Message.MessageIdRequested.class,
-      responseType = GrpcClasses.Message.MessageDeleted.class,
+      requestType = GrpcClasses.Message.Message.MessageIdRequested.class,
+      responseType = GrpcClasses.Message.Message.MessageDeleted.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<GrpcClasses.Message.MessageIdRequested,
-      GrpcClasses.Message.MessageDeleted> getDeleteMessageMethod() {
-    io.grpc.MethodDescriptor<GrpcClasses.Message.MessageIdRequested, GrpcClasses.Message.MessageDeleted> getDeleteMessageMethod;
+  public static io.grpc.MethodDescriptor<GrpcClasses.Message.Message.MessageIdRequested,
+      GrpcClasses.Message.Message.MessageDeleted> getDeleteMessageMethod() {
+    io.grpc.MethodDescriptor<GrpcClasses.Message.Message.MessageIdRequested, GrpcClasses.Message.Message.MessageDeleted> getDeleteMessageMethod;
     if ((getDeleteMessageMethod = MessagesGrpc.getDeleteMessageMethod) == null) {
       synchronized (MessagesGrpc.class) {
         if ((getDeleteMessageMethod = MessagesGrpc.getDeleteMessageMethod) == null) {
           MessagesGrpc.getDeleteMessageMethod = getDeleteMessageMethod =
-              io.grpc.MethodDescriptor.<GrpcClasses.Message.MessageIdRequested, GrpcClasses.Message.MessageDeleted>newBuilder()
+              io.grpc.MethodDescriptor.<GrpcClasses.Message.Message.MessageIdRequested, GrpcClasses.Message.Message.MessageDeleted>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "deleteMessage"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Message.MessageIdRequested.getDefaultInstance()))
+                  GrpcClasses.Message.Message.MessageIdRequested.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  GrpcClasses.Message.MessageDeleted.getDefaultInstance()))
+                  GrpcClasses.Message.Message.MessageDeleted.getDefaultInstance()))
               .setSchemaDescriptor(new MessagesMethodDescriptorSupplier("deleteMessage"))
               .build();
         }
@@ -188,29 +188,29 @@ public final class MessagesGrpc {
 
     /**
      */
-    public void findById(GrpcClasses.Message.MessageIdRequested request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageModel> responseObserver) {
+    public void findById(GrpcClasses.Message.Message.MessageIdRequested request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageModel> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindByIdMethod(), responseObserver);
     }
 
     /**
      */
-    public void findAllMessagesForAChat(GrpcClasses.Message.ChatIdRequested request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageModel> responseObserver) {
+    public void findAllMessagesForAChat(GrpcClasses.Message.Message.ChatIdRequested request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageModel> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAllMessagesForAChatMethod(), responseObserver);
     }
 
     /**
      */
-    public void saveMessage(GrpcClasses.Message.MessageModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageModel> responseObserver) {
+    public void saveMessage(GrpcClasses.Message.Message.MessageModel request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageModel> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSaveMessageMethod(), responseObserver);
     }
 
     /**
      */
-    public void deleteMessage(GrpcClasses.Message.MessageIdRequested request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageDeleted> responseObserver) {
+    public void deleteMessage(GrpcClasses.Message.Message.MessageIdRequested request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageDeleted> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMessageMethod(), responseObserver);
     }
 
@@ -220,29 +220,29 @@ public final class MessagesGrpc {
             getFindByIdMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                GrpcClasses.Message.MessageIdRequested,
-                GrpcClasses.Message.MessageModel>(
+                GrpcClasses.Message.Message.MessageIdRequested,
+                GrpcClasses.Message.Message.MessageModel>(
                   this, METHODID_FIND_BY_ID)))
           .addMethod(
             getFindAllMessagesForAChatMethod(),
             io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
-                GrpcClasses.Message.ChatIdRequested,
-                GrpcClasses.Message.MessageModel>(
+                GrpcClasses.Message.Message.ChatIdRequested,
+                GrpcClasses.Message.Message.MessageModel>(
                   this, METHODID_FIND_ALL_MESSAGES_FOR_ACHAT)))
           .addMethod(
             getSaveMessageMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                GrpcClasses.Message.MessageModel,
-                GrpcClasses.Message.MessageModel>(
+                GrpcClasses.Message.Message.MessageModel,
+                GrpcClasses.Message.Message.MessageModel>(
                   this, METHODID_SAVE_MESSAGE)))
           .addMethod(
             getDeleteMessageMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                GrpcClasses.Message.MessageIdRequested,
-                GrpcClasses.Message.MessageDeleted>(
+                GrpcClasses.Message.Message.MessageIdRequested,
+                GrpcClasses.Message.Message.MessageDeleted>(
                   this, METHODID_DELETE_MESSAGE)))
           .build();
     }
@@ -264,32 +264,32 @@ public final class MessagesGrpc {
 
     /**
      */
-    public void findById(GrpcClasses.Message.MessageIdRequested request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageModel> responseObserver) {
+    public void findById(GrpcClasses.Message.Message.MessageIdRequested request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageModel> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFindByIdMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void findAllMessagesForAChat(GrpcClasses.Message.ChatIdRequested request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageModel> responseObserver) {
+    public void findAllMessagesForAChat(GrpcClasses.Message.Message.ChatIdRequested request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageModel> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getFindAllMessagesForAChatMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void saveMessage(GrpcClasses.Message.MessageModel request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageModel> responseObserver) {
+    public void saveMessage(GrpcClasses.Message.Message.MessageModel request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageModel> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSaveMessageMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void deleteMessage(GrpcClasses.Message.MessageIdRequested request,
-        io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageDeleted> responseObserver) {
+    public void deleteMessage(GrpcClasses.Message.Message.MessageIdRequested request,
+        io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageDeleted> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteMessageMethod(), getCallOptions()), request, responseObserver);
     }
@@ -311,29 +311,29 @@ public final class MessagesGrpc {
 
     /**
      */
-    public GrpcClasses.Message.MessageModel findById(GrpcClasses.Message.MessageIdRequested request) {
+    public GrpcClasses.Message.Message.MessageModel findById(GrpcClasses.Message.Message.MessageIdRequested request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindByIdMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public java.util.Iterator<GrpcClasses.Message.MessageModel> findAllMessagesForAChat(
-        GrpcClasses.Message.ChatIdRequested request) {
+    public java.util.Iterator<GrpcClasses.Message.Message.MessageModel> findAllMessagesForAChat(
+        GrpcClasses.Message.Message.ChatIdRequested request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getFindAllMessagesForAChatMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public GrpcClasses.Message.MessageModel saveMessage(GrpcClasses.Message.MessageModel request) {
+    public GrpcClasses.Message.Message.MessageModel saveMessage(GrpcClasses.Message.Message.MessageModel request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSaveMessageMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public GrpcClasses.Message.MessageDeleted deleteMessage(GrpcClasses.Message.MessageIdRequested request) {
+    public GrpcClasses.Message.Message.MessageDeleted deleteMessage(GrpcClasses.Message.Message.MessageIdRequested request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteMessageMethod(), getCallOptions(), request);
     }
@@ -355,24 +355,24 @@ public final class MessagesGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Message.MessageModel> findById(
-        GrpcClasses.Message.MessageIdRequested request) {
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Message.Message.MessageModel> findById(
+        GrpcClasses.Message.Message.MessageIdRequested request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFindByIdMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Message.MessageModel> saveMessage(
-        GrpcClasses.Message.MessageModel request) {
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Message.Message.MessageModel> saveMessage(
+        GrpcClasses.Message.Message.MessageModel request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSaveMessageMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Message.MessageDeleted> deleteMessage(
-        GrpcClasses.Message.MessageIdRequested request) {
+    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Message.Message.MessageDeleted> deleteMessage(
+        GrpcClasses.Message.Message.MessageIdRequested request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteMessageMethod(), getCallOptions()), request);
     }
@@ -401,20 +401,20 @@ public final class MessagesGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_FIND_BY_ID:
-          serviceImpl.findById((GrpcClasses.Message.MessageIdRequested) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageModel>) responseObserver);
+          serviceImpl.findById((GrpcClasses.Message.Message.MessageIdRequested) request,
+              (io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageModel>) responseObserver);
           break;
         case METHODID_FIND_ALL_MESSAGES_FOR_ACHAT:
-          serviceImpl.findAllMessagesForAChat((GrpcClasses.Message.ChatIdRequested) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageModel>) responseObserver);
+          serviceImpl.findAllMessagesForAChat((GrpcClasses.Message.Message.ChatIdRequested) request,
+              (io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageModel>) responseObserver);
           break;
         case METHODID_SAVE_MESSAGE:
-          serviceImpl.saveMessage((GrpcClasses.Message.MessageModel) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageModel>) responseObserver);
+          serviceImpl.saveMessage((GrpcClasses.Message.Message.MessageModel) request,
+              (io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageModel>) responseObserver);
           break;
         case METHODID_DELETE_MESSAGE:
-          serviceImpl.deleteMessage((GrpcClasses.Message.MessageIdRequested) request,
-              (io.grpc.stub.StreamObserver<GrpcClasses.Message.MessageDeleted>) responseObserver);
+          serviceImpl.deleteMessage((GrpcClasses.Message.Message.MessageIdRequested) request,
+              (io.grpc.stub.StreamObserver<GrpcClasses.Message.Message.MessageDeleted>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -438,7 +438,7 @@ public final class MessagesGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return GrpcClasses.Message.getDescriptor();
+      return GrpcClasses.Message.Message.getDescriptor();
     }
 
     @java.lang.Override

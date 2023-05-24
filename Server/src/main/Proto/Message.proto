@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package GrpcClasses;
+package GrpcClasses.Message;
 
 service Messages {
   rpc findById(MessageIdRequested) returns (MessageModel);
@@ -27,4 +27,3 @@ message ChatIdRequested {
 
 message MessageDeleted {
 }
-

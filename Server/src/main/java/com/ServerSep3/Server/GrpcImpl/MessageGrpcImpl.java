@@ -1,7 +1,7 @@
 package com.ServerSep3.Server.GrpcImpl;
 
-import GrpcClasses.Message;
-import GrpcClasses.MessagesGrpc;
+import GrpcClasses.Message.Message;
+import GrpcClasses.Message.MessagesGrpc;
 import com.ServerSep3.Server.Model.MessageModel;
 import com.ServerSep3.Server.Service.MessageService;
 import io.grpc.stub.StreamObserver;

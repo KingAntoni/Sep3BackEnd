@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package GrpcClasses;
+package GrpcClasses.Match;
 
 service Matches {
   rpc findById(MatchIdRequest) returns (MatchModel);

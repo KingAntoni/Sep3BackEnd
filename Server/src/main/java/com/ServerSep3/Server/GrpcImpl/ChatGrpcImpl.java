@@ -1,7 +1,7 @@
 package com.ServerSep3.Server.GrpcImpl;
 
-import GrpcClasses.Chat;
-import GrpcClasses.ChatsGrpc;
+import GrpcClasses.Chat.Chat;
+import GrpcClasses.Chat.ChatsGrpc;
 import com.ServerSep3.Server.Model.ChatModel;
 import com.ServerSep3.Server.Service.ChatService;
 import io.grpc.stub.StreamObserver;
@@ -19,19 +19,26 @@ public class ChatGrpcImpl extends ChatsGrpc.ChatsImplBase {
 
     @Override
     public void findById(Chat.lookUpById request, StreamObserver<Chat.ChatModel> responseObserver) {
+        super.findById(request, responseObserver);
         System.out.println("Finding chat");
         ChatModel model = service.findById(request.getId());
         Chat.ChatModel response = Chat.ChatModel.newBuilder()
-            .setId(model.getId())
-            .setUserId1(model.getUserId1())
-            .setUserId2(model.getUserId2())
-            .build();
+                .setId(model.getId())
+                .setUserId1(model.getUserId1())
+                .setUserId2(model.getUserId2())
+                .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
         System.out.println("Chat find");
     }
 
-
+    @Override
+    public void saveChat(Chat.ChatModel request, StreamObserver<Chat.Empty> responseObserver) {
+        System.out.println("Save chat");
+        service.saveChat(new ChatModel(request.getId(), request.getUserId1(), request.getUserId2()));
+        responseObserver.onCompleted();
+        System.out.println("Chat saved");
+    }
 
     @Override
     public void deleteChat(Chat.lookUpById request, StreamObserver<Chat.Empty> responseObserver) {

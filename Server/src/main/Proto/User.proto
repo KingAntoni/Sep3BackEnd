@@ -1,6 +1,6 @@
 syntax= "proto3";
 
-package GrpcClasses;
+package GrpcClasses.User;
 
 service UserGrpc{
   rpc saveUser(UserModel) returns (Empty){}

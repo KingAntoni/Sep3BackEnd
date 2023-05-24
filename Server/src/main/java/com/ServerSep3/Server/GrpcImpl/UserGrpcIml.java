@@ -1,7 +1,7 @@
 package com.ServerSep3.Server.GrpcImpl;
 
-import GrpcClasses.User;
-import GrpcClasses.UserGrpcGrpc;
+import GrpcClasses.User.User;
+import GrpcClasses.User.UserGrpcGrpc;
 import com.ServerSep3.Server.Model.UserModel;
 import com.ServerSep3.Server.Service.UserService;
 import io.grpc.stub.StreamObserver;
