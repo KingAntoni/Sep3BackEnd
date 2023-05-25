@@ -62,22 +62,15 @@ public class MatchServiceImpl implements MatchService {
         return false;
     }
 
-
     @Override
     public void CreateMatchForUser(UserModel userModel){
-        String gender=userModel.getGender();
-        if (gender.equals("m")){
-            gender= "f";
-        } else  if (gender.equals("f")){
-            gender= "m";
-        }
-
-        List<UserModel> matchList=userRepository.findByGender(gender);
+        String preference=userModel.getPreference();
+        List<UserModel> matchList=userRepository.findByGender(preference);
         for (int i=0;i<matchList.size();i++){
             MatchModel matchModel= new MatchModel();
             matchModel.setUserId1(userModel.getId());
             matchModel.setUserId2(matchList.get(i).getId());
-
+            createMatch(matchModel);
         }
     }
 
@@ -88,6 +81,4 @@ public class MatchServiceImpl implements MatchService {
         matchModel.setMatch(null);
         return matchRepository.save(matchModel);
     }
-
-
 }

@@ -121,33 +121,67 @@ public class UserGrpcIml extends UserGrpcGrpc.UserGrpcImplBase {
     public void findByUsername(User.GetByUsername request, StreamObserver<User.UserModel> responseObserver) {
         System.out.println("Find By Username");
         UserModel model=userService.findByUsername(request.getUsername());
+        if (model == null){
+            System.out.println("its null");
+            User.UserModel response2= User.UserModel.newBuilder()
+            .setFirstName("niull")
+                    .setId(0)
+                    .setUsername("niull")
+                    .setPassword("niull")
+                    .setEmail("niull")
+                    .setLastName("niull")
+                    .setBirthday("niull")
+                    .setDescription("niull")
+                    .setNumberOfMatches(0)
+                    .setNote("niull")
+                    .setPhoto1("niull")
+                    .setPhoto2("niull")
+                    .setPhoto3("niull")
+                    .setPhoto4("niull")
+                    .setPhoto5("niull")
+                    .setGender("niull")
+                    .setPreference("niull")
+                    .setHoroscope("niull")
+                    .setOccupation("niull")
+                    .setCity("niull")
+                    .setEducation("niull")
+                    .setDrink(true)
+                    .setAdministrator(false)
+                            .build();
+            System.out.println(response2.getUsername());
+            responseObserver.onNext(response2);
+            responseObserver.onCompleted();
+        }
+        else {
+            System.out.println("metido");
         User.UserModel response= User.UserModel.newBuilder()
-                .setFirstName(model.getFirstName())
-                .setId(model.getId())
-                .setUsername(model.getUsername())
-                .setPassword(model.getPassword())
-                .setEmail(model.getEmail())
-                .setLastName(model.getLastName())
-                .setBirthday(model.getBirthday())
-                .setDescription(model.getDescription())
-                .setNumberOfMatches(model.getNumber_of_matches())
-                .setNote(model.getNote())
-                .setPhoto1(model.getPhoto1())
-                .setPhoto2(model.getPhoto2())
-                .setPhoto3(model.getPhoto3())
-                .setPhoto4(model.getPhoto4())
-                .setPhoto5(model.getPhoto5())
-                .setGender(model.getGender())
-                .setPreference(model.getPreference())
-                .setHoroscope(model.getHoroscope())
-                .setOccupation(model.getOccupation())
-                .setCity(model.getCity())
-                .setEducation(model.getEducation())
-                .setDrink(model.isDrink())
-                .setAdministrator(model.isAdministrator())
-                .build();
-        responseObserver.onNext(response);
-        responseObserver.onCompleted();
+                    .setFirstName(model.getFirstName())
+                    .setId(model.getId())
+                    .setUsername(model.getUsername())
+                    .setPassword(model.getPassword())
+                    .setEmail(model.getEmail())
+                    .setLastName(model.getLastName())
+                    .setBirthday(model.getBirthday())
+                    .setDescription(model.getDescription())
+                    .setNumberOfMatches(model.getNumber_of_matches())
+                    .setNote(model.getNote())
+                    .setPhoto1(model.getPhoto1())
+                    .setPhoto2(model.getPhoto2())
+                    .setPhoto3(model.getPhoto3())
+                    .setPhoto4(model.getPhoto4())
+                    .setPhoto5(model.getPhoto5())
+                    .setGender(model.getGender())
+                    .setPreference(model.getPreference())
+                    .setHoroscope(model.getHoroscope())
+                    .setOccupation(model.getOccupation())
+                    .setCity(model.getCity())
+                    .setEducation(model.getEducation())
+                    .setDrink(model.isDrink())
+                    .setAdministrator(model.isAdministrator())
+                    .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        }
+        }
     }
 
-}

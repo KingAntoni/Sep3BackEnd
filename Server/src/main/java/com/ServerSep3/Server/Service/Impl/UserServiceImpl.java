@@ -31,8 +31,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserModel saveUser(UserModel user) {
+        UserModel userModel=userRepository.save(user);
         matchService.CreateMatchForUser(user);
-        return userRepository.save(user);
+        return userModel;
     }
 
     @Override
@@ -59,7 +60,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserModel findByUsername(String username) {
-        return userRepository.findByUsername(username);
+        UserModel userModel= userRepository.findByUsername(username);
+        if (userModel == null) {
+            return null;
+        }
+        return userModel;
     }
 
     @Override
