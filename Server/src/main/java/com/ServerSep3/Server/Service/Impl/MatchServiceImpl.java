@@ -1,6 +1,8 @@
 package com.ServerSep3.Server.Service.Impl;
+import com.ServerSep3.Server.Model.ChatModel;
 import com.ServerSep3.Server.Model.MatchModel;
 import com.ServerSep3.Server.Model.UserModel;
+import com.ServerSep3.Server.Repository.ChatRepository;
 import com.ServerSep3.Server.Repository.MatchRepository;
 import com.ServerSep3.Server.Repository.UserRepository;
 import com.ServerSep3.Server.Service.MatchService;
@@ -15,11 +17,14 @@ public class MatchServiceImpl implements MatchService {
 
     private final MatchRepository matchRepository;
     private final UserRepository userRepository;
+    private final ChatRepository chatRepository;
 
-    public MatchServiceImpl(MatchRepository matchRepository, UserRepository userRepository) {
+    public MatchServiceImpl(MatchRepository matchRepository, UserRepository userRepository, ChatRepository chatRepository) {
         this.matchRepository = matchRepository;
         this.userRepository = userRepository;
+        this.chatRepository = chatRepository;
     }
+
 
     @Override
     public MatchModel findById(int id) {
@@ -31,6 +36,8 @@ public class MatchServiceImpl implements MatchService {
         MatchModel existing=matchRepository.findById(matchModel.getId());
         if(isMatch(matchModel)){
             existing.setMatch("true");
+            ChatModel chatModel= new ChatModel(0,existing.getUserId1(), existing.getUserId2());
+            chatRepository.save(chatModel);
         }
         existing.setMatchUser2(matchModel.getMatchUser2());
         existing.setMatchUser1(matchModel.getMatchUser1());
