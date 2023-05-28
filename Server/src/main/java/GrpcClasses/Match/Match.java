@@ -31,10 +31,16 @@ public final class Match {
     int getUserId1();
 
     /**
-     * <code>bool matchUser1 = 3;</code>
+     * <code>string matchUser1 = 3;</code>
      * @return The matchUser1.
      */
-    boolean getMatchUser1();
+    java.lang.String getMatchUser1();
+    /**
+     * <code>string matchUser1 = 3;</code>
+     * @return The bytes for matchUser1.
+     */
+    com.google.protobuf.ByteString
+        getMatchUser1Bytes();
 
     /**
      * <code>int32 userId2 = 4;</code>
@@ -43,16 +49,28 @@ public final class Match {
     int getUserId2();
 
     /**
-     * <code>bool matchUser2 = 5;</code>
+     * <code>string matchUser2 = 5;</code>
      * @return The matchUser2.
      */
-    boolean getMatchUser2();
+    java.lang.String getMatchUser2();
+    /**
+     * <code>string matchUser2 = 5;</code>
+     * @return The bytes for matchUser2.
+     */
+    com.google.protobuf.ByteString
+        getMatchUser2Bytes();
 
     /**
-     * <code>bool match = 6;</code>
+     * <code>string match = 6;</code>
      * @return The match.
      */
-    boolean getMatch();
+    java.lang.String getMatch();
+    /**
+     * <code>string match = 6;</code>
+     * @return The bytes for match.
+     */
+    com.google.protobuf.ByteString
+        getMatchBytes();
   }
   /**
    * Protobuf type {@code GrpcClasses.Match.MatchModel}
@@ -67,6 +85,9 @@ public final class Match {
       super(builder);
     }
     private MatchModel() {
+      matchUser1_ = "";
+      matchUser2_ = "";
+      match_ = "";
     }
 
     @java.lang.Override
@@ -109,9 +130,10 @@ public final class Match {
               userId1_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              matchUser1_ = input.readBool();
+              matchUser1_ = s;
               break;
             }
             case 32: {
@@ -119,14 +141,16 @@ public final class Match {
               userId2_ = input.readInt32();
               break;
             }
-            case 40: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              matchUser2_ = input.readBool();
+              matchUser2_ = s;
               break;
             }
-            case 48: {
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              match_ = input.readBool();
+              match_ = s;
               break;
             }
             default: {
@@ -186,14 +210,41 @@ public final class Match {
     }
 
     public static final int MATCHUSER1_FIELD_NUMBER = 3;
-    private boolean matchUser1_;
+    private volatile java.lang.Object matchUser1_;
     /**
-     * <code>bool matchUser1 = 3;</code>
+     * <code>string matchUser1 = 3;</code>
      * @return The matchUser1.
      */
     @java.lang.Override
-    public boolean getMatchUser1() {
-      return matchUser1_;
+    public java.lang.String getMatchUser1() {
+      java.lang.Object ref = matchUser1_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        matchUser1_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string matchUser1 = 3;</code>
+     * @return The bytes for matchUser1.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMatchUser1Bytes() {
+      java.lang.Object ref = matchUser1_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        matchUser1_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int USERID2_FIELD_NUMBER = 4;
@@ -208,25 +259,79 @@ public final class Match {
     }
 
     public static final int MATCHUSER2_FIELD_NUMBER = 5;
-    private boolean matchUser2_;
+    private volatile java.lang.Object matchUser2_;
     /**
-     * <code>bool matchUser2 = 5;</code>
+     * <code>string matchUser2 = 5;</code>
      * @return The matchUser2.
      */
     @java.lang.Override
-    public boolean getMatchUser2() {
-      return matchUser2_;
+    public java.lang.String getMatchUser2() {
+      java.lang.Object ref = matchUser2_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        matchUser2_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string matchUser2 = 5;</code>
+     * @return The bytes for matchUser2.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMatchUser2Bytes() {
+      java.lang.Object ref = matchUser2_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        matchUser2_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int MATCH_FIELD_NUMBER = 6;
-    private boolean match_;
+    private volatile java.lang.Object match_;
     /**
-     * <code>bool match = 6;</code>
+     * <code>string match = 6;</code>
      * @return The match.
      */
     @java.lang.Override
-    public boolean getMatch() {
-      return match_;
+    public java.lang.String getMatch() {
+      java.lang.Object ref = match_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        match_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string match = 6;</code>
+     * @return The bytes for match.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMatchBytes() {
+      java.lang.Object ref = match_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        match_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -249,17 +354,17 @@ public final class Match {
       if (userId1_ != 0) {
         output.writeInt32(2, userId1_);
       }
-      if (matchUser1_ != false) {
-        output.writeBool(3, matchUser1_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matchUser1_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, matchUser1_);
       }
       if (userId2_ != 0) {
         output.writeInt32(4, userId2_);
       }
-      if (matchUser2_ != false) {
-        output.writeBool(5, matchUser2_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matchUser2_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, matchUser2_);
       }
-      if (match_ != false) {
-        output.writeBool(6, match_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(match_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, match_);
       }
       unknownFields.writeTo(output);
     }
@@ -278,21 +383,18 @@ public final class Match {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, userId1_);
       }
-      if (matchUser1_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, matchUser1_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matchUser1_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, matchUser1_);
       }
       if (userId2_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, userId2_);
       }
-      if (matchUser2_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, matchUser2_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(matchUser2_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, matchUser2_);
       }
-      if (match_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, match_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(match_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, match_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,14 +415,14 @@ public final class Match {
           != other.getId()) return false;
       if (getUserId1()
           != other.getUserId1()) return false;
-      if (getMatchUser1()
-          != other.getMatchUser1()) return false;
+      if (!getMatchUser1()
+          .equals(other.getMatchUser1())) return false;
       if (getUserId2()
           != other.getUserId2()) return false;
-      if (getMatchUser2()
-          != other.getMatchUser2()) return false;
-      if (getMatch()
-          != other.getMatch()) return false;
+      if (!getMatchUser2()
+          .equals(other.getMatchUser2())) return false;
+      if (!getMatch()
+          .equals(other.getMatch())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -337,16 +439,13 @@ public final class Match {
       hash = (37 * hash) + USERID1_FIELD_NUMBER;
       hash = (53 * hash) + getUserId1();
       hash = (37 * hash) + MATCHUSER1_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMatchUser1());
+      hash = (53 * hash) + getMatchUser1().hashCode();
       hash = (37 * hash) + USERID2_FIELD_NUMBER;
       hash = (53 * hash) + getUserId2();
       hash = (37 * hash) + MATCHUSER2_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMatchUser2());
+      hash = (53 * hash) + getMatchUser2().hashCode();
       hash = (37 * hash) + MATCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMatch());
+      hash = (53 * hash) + getMatch().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -484,13 +583,13 @@ public final class Match {
 
         userId1_ = 0;
 
-        matchUser1_ = false;
+        matchUser1_ = "";
 
         userId2_ = 0;
 
-        matchUser2_ = false;
+        matchUser2_ = "";
 
-        match_ = false;
+        match_ = "";
 
         return this;
       }
@@ -578,17 +677,20 @@ public final class Match {
         if (other.getUserId1() != 0) {
           setUserId1(other.getUserId1());
         }
-        if (other.getMatchUser1() != false) {
-          setMatchUser1(other.getMatchUser1());
+        if (!other.getMatchUser1().isEmpty()) {
+          matchUser1_ = other.matchUser1_;
+          onChanged();
         }
         if (other.getUserId2() != 0) {
           setUserId2(other.getUserId2());
         }
-        if (other.getMatchUser2() != false) {
-          setMatchUser2(other.getMatchUser2());
+        if (!other.getMatchUser2().isEmpty()) {
+          matchUser2_ = other.matchUser2_;
+          onChanged();
         }
-        if (other.getMatch() != false) {
-          setMatch(other.getMatch());
+        if (!other.getMatch().isEmpty()) {
+          match_ = other.match_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -681,33 +783,78 @@ public final class Match {
         return this;
       }
 
-      private boolean matchUser1_ ;
+      private java.lang.Object matchUser1_ = "";
       /**
-       * <code>bool matchUser1 = 3;</code>
+       * <code>string matchUser1 = 3;</code>
        * @return The matchUser1.
        */
-      @java.lang.Override
-      public boolean getMatchUser1() {
-        return matchUser1_;
+      public java.lang.String getMatchUser1() {
+        java.lang.Object ref = matchUser1_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          matchUser1_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>bool matchUser1 = 3;</code>
+       * <code>string matchUser1 = 3;</code>
+       * @return The bytes for matchUser1.
+       */
+      public com.google.protobuf.ByteString
+          getMatchUser1Bytes() {
+        java.lang.Object ref = matchUser1_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          matchUser1_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string matchUser1 = 3;</code>
        * @param value The matchUser1 to set.
        * @return This builder for chaining.
        */
-      public Builder setMatchUser1(boolean value) {
-        
+      public Builder setMatchUser1(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         matchUser1_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool matchUser1 = 3;</code>
+       * <code>string matchUser1 = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMatchUser1() {
         
-        matchUser1_ = false;
+        matchUser1_ = getDefaultInstance().getMatchUser1();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string matchUser1 = 3;</code>
+       * @param value The bytes for matchUser1 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchUser1Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        matchUser1_ = value;
         onChanged();
         return this;
       }
@@ -743,64 +890,154 @@ public final class Match {
         return this;
       }
 
-      private boolean matchUser2_ ;
+      private java.lang.Object matchUser2_ = "";
       /**
-       * <code>bool matchUser2 = 5;</code>
+       * <code>string matchUser2 = 5;</code>
        * @return The matchUser2.
        */
-      @java.lang.Override
-      public boolean getMatchUser2() {
-        return matchUser2_;
+      public java.lang.String getMatchUser2() {
+        java.lang.Object ref = matchUser2_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          matchUser2_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>bool matchUser2 = 5;</code>
+       * <code>string matchUser2 = 5;</code>
+       * @return The bytes for matchUser2.
+       */
+      public com.google.protobuf.ByteString
+          getMatchUser2Bytes() {
+        java.lang.Object ref = matchUser2_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          matchUser2_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string matchUser2 = 5;</code>
        * @param value The matchUser2 to set.
        * @return This builder for chaining.
        */
-      public Builder setMatchUser2(boolean value) {
-        
+      public Builder setMatchUser2(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         matchUser2_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool matchUser2 = 5;</code>
+       * <code>string matchUser2 = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearMatchUser2() {
         
-        matchUser2_ = false;
+        matchUser2_ = getDefaultInstance().getMatchUser2();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string matchUser2 = 5;</code>
+       * @param value The bytes for matchUser2 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchUser2Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        matchUser2_ = value;
         onChanged();
         return this;
       }
 
-      private boolean match_ ;
+      private java.lang.Object match_ = "";
       /**
-       * <code>bool match = 6;</code>
+       * <code>string match = 6;</code>
        * @return The match.
        */
-      @java.lang.Override
-      public boolean getMatch() {
-        return match_;
+      public java.lang.String getMatch() {
+        java.lang.Object ref = match_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          match_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>bool match = 6;</code>
+       * <code>string match = 6;</code>
+       * @return The bytes for match.
+       */
+      public com.google.protobuf.ByteString
+          getMatchBytes() {
+        java.lang.Object ref = match_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          match_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string match = 6;</code>
        * @param value The match to set.
        * @return This builder for chaining.
        */
-      public Builder setMatch(boolean value) {
-        
+      public Builder setMatch(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         match_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool match = 6;</code>
+       * <code>string match = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearMatch() {
         
-        match_ = false;
+        match_ = getDefaultInstance().getMatch();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string match = 6;</code>
+       * @param value The bytes for match to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        match_ = value;
         onChanged();
         return this;
       }
@@ -1842,10 +2079,16 @@ public final class Match {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool match = 1;</code>
+     * <code>string match = 1;</code>
      * @return The match.
      */
-    boolean getMatch();
+    java.lang.String getMatch();
+    /**
+     * <code>string match = 1;</code>
+     * @return The bytes for match.
+     */
+    com.google.protobuf.ByteString
+        getMatchBytes();
   }
   /**
    * Protobuf type {@code GrpcClasses.Match.MatchResult}
@@ -1860,6 +2103,7 @@ public final class Match {
       super(builder);
     }
     private MatchResult() {
+      match_ = "";
     }
 
     @java.lang.Override
@@ -1892,9 +2136,10 @@ public final class Match {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              match_ = input.readBool();
+              match_ = s;
               break;
             }
             default: {
@@ -1932,14 +2177,41 @@ public final class Match {
     }
 
     public static final int MATCH_FIELD_NUMBER = 1;
-    private boolean match_;
+    private volatile java.lang.Object match_;
     /**
-     * <code>bool match = 1;</code>
+     * <code>string match = 1;</code>
      * @return The match.
      */
     @java.lang.Override
-    public boolean getMatch() {
-      return match_;
+    public java.lang.String getMatch() {
+      java.lang.Object ref = match_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        match_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string match = 1;</code>
+     * @return The bytes for match.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMatchBytes() {
+      java.lang.Object ref = match_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        match_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1956,8 +2228,8 @@ public final class Match {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (match_ != false) {
-        output.writeBool(1, match_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(match_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, match_);
       }
       unknownFields.writeTo(output);
     }
@@ -1968,9 +2240,8 @@ public final class Match {
       if (size != -1) return size;
 
       size = 0;
-      if (match_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, match_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(match_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, match_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1987,8 +2258,8 @@ public final class Match {
       }
       GrpcClasses.Match.Match.MatchResult other = (GrpcClasses.Match.Match.MatchResult) obj;
 
-      if (getMatch()
-          != other.getMatch()) return false;
+      if (!getMatch()
+          .equals(other.getMatch())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2001,8 +2272,7 @@ public final class Match {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MATCH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMatch());
+      hash = (53 * hash) + getMatch().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2136,7 +2406,7 @@ public final class Match {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        match_ = false;
+        match_ = "";
 
         return this;
       }
@@ -2213,8 +2483,9 @@ public final class Match {
 
       public Builder mergeFrom(GrpcClasses.Match.Match.MatchResult other) {
         if (other == GrpcClasses.Match.Match.MatchResult.getDefaultInstance()) return this;
-        if (other.getMatch() != false) {
-          setMatch(other.getMatch());
+        if (!other.getMatch().isEmpty()) {
+          match_ = other.match_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2245,33 +2516,78 @@ public final class Match {
         return this;
       }
 
-      private boolean match_ ;
+      private java.lang.Object match_ = "";
       /**
-       * <code>bool match = 1;</code>
+       * <code>string match = 1;</code>
        * @return The match.
        */
-      @java.lang.Override
-      public boolean getMatch() {
-        return match_;
+      public java.lang.String getMatch() {
+        java.lang.Object ref = match_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          match_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>bool match = 1;</code>
+       * <code>string match = 1;</code>
+       * @return The bytes for match.
+       */
+      public com.google.protobuf.ByteString
+          getMatchBytes() {
+        java.lang.Object ref = match_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          match_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string match = 1;</code>
        * @param value The match to set.
        * @return This builder for chaining.
        */
-      public Builder setMatch(boolean value) {
-        
+      public Builder setMatch(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         match_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool match = 1;</code>
+       * <code>string match = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMatch() {
         
-        match_ = false;
+        match_ = getDefaultInstance().getMatch();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string match = 1;</code>
+       * @param value The bytes for match to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        match_ = value;
         onChanged();
         return this;
       }
@@ -6341,10 +6657,10 @@ public final class Match {
     java.lang.String[] descriptorData = {
       "\n\013Match.proto\022\021GrpcClasses.Match\"q\n\nMatc" +
       "hModel\022\n\n\002id\030\001 \001(\005\022\017\n\007userId1\030\002 \001(\005\022\022\n\nm" +
-      "atchUser1\030\003 \001(\010\022\017\n\007userId2\030\004 \001(\005\022\022\n\nmatc" +
-      "hUser2\030\005 \001(\010\022\r\n\005match\030\006 \001(\010\"\034\n\016MatchIdRe" +
+      "atchUser1\030\003 \001(\t\022\017\n\007userId2\030\004 \001(\005\022\022\n\nmatc" +
+      "hUser2\030\005 \001(\t\022\r\n\005match\030\006 \001(\t\"\034\n\016MatchIdRe" +
       "quest\022\n\n\002id\030\001 \001(\005\"\037\n\rUserIdRequest\022\016\n\006us" +
-      "erId\030\001 \001(\005\"\034\n\013MatchResult\022\r\n\005match\030\001 \001(\010" +
+      "erId\030\001 \001(\005\"\034\n\013MatchResult\022\r\n\005match\030\001 \001(\t" +
       "\"\243\003\n\tUserModel\022\n\n\002id\030\001 \001(\005\022\020\n\010username\030\002" +
       " \001(\t\022\020\n\010password\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\022\n" +
       "\nfirst_name\030\005 \001(\t\022\021\n\tlast_name\030\006 \001(\t\022\020\n\010" +

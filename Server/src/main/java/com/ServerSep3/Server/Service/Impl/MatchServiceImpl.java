@@ -30,10 +30,10 @@ public class MatchServiceImpl implements MatchService {
     public MatchModel updateMatch(MatchModel matchModel) {
         MatchModel existing=matchRepository.findById(matchModel.getId());
         if(isMatch(matchModel)){
-            existing.setMatch(true);
+            existing.setMatch("true");
         }
         existing.setMatchUser2(matchModel.getMatchUser2());
-        existing.setMatchUser1(matchModel.getMatchUser2());
+        existing.setMatchUser1(matchModel.getMatchUser1());
         return matchRepository.save(existing);
     }
 
@@ -49,14 +49,22 @@ public class MatchServiceImpl implements MatchService {
         List<MatchModel> resultList = new ArrayList<>();
         resultList.addAll(list1);
         resultList.addAll(list2);
+        for (int i=0; i<resultList.size();i++){
+            if(resultList.get(i).getUserId1() == id && !(resultList.get(i).getMatchUser1()).equals("null")){
+                    list1.remove(i);
+            }
+            if(resultList.get(i).getUserId2() == id && !(resultList.get(i).getMatchUser2()).equals("null")){
+                    list1.remove(i);
+            }
+        }
         return resultList;
     }
 
     @Override
     public boolean isMatch(MatchModel matchModel) {
-        Boolean match1= matchModel.getMatchUser1();
-        Boolean match2= matchModel.getMatchUser2();
-        if(match1 & match2){
+        String match1= matchModel.getMatchUser1();
+        String match2= matchModel.getMatchUser2();
+        if(match1.equals("true") & match2.equals("true")){
             return true;
         }
         return false;
@@ -76,9 +84,9 @@ public class MatchServiceImpl implements MatchService {
 
     @Override
     public MatchModel createMatch(MatchModel matchModel) {
-        matchModel.setMatchUser1(null);
-        matchModel.setMatchUser2(null);
-        matchModel.setMatch(null);
+        matchModel.setMatchUser1("null");
+        matchModel.setMatchUser2("null");
+        matchModel.setMatch("null");
         return matchRepository.save(matchModel);
     }
 }

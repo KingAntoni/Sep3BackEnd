@@ -114,7 +114,7 @@ public final class ChatsGrpc {
       fullMethodName = SERVICE_NAME + '/' + "findByUserId",
       requestType = GrpcClasses.Chat.Chat.lookUpByUserId.class,
       responseType = GrpcClasses.Chat.Chat.ChatModel.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpByUserId,
       GrpcClasses.Chat.Chat.ChatModel> getFindByUserIdMethod() {
     io.grpc.MethodDescriptor<GrpcClasses.Chat.Chat.lookUpByUserId, GrpcClasses.Chat.Chat.ChatModel> getFindByUserIdMethod;
@@ -123,7 +123,7 @@ public final class ChatsGrpc {
         if ((getFindByUserIdMethod = ChatsGrpc.getFindByUserIdMethod) == null) {
           ChatsGrpc.getFindByUserIdMethod = getFindByUserIdMethod =
               io.grpc.MethodDescriptor.<GrpcClasses.Chat.Chat.lookUpByUserId, GrpcClasses.Chat.Chat.ChatModel>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findByUserId"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
@@ -239,7 +239,7 @@ public final class ChatsGrpc {
                   this, METHODID_DELETE_CHAT)))
           .addMethod(
             getFindByUserIdMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 GrpcClasses.Chat.Chat.lookUpByUserId,
                 GrpcClasses.Chat.Chat.ChatModel>(
@@ -290,7 +290,7 @@ public final class ChatsGrpc {
      */
     public void findByUserId(GrpcClasses.Chat.Chat.lookUpByUserId request,
         io.grpc.stub.StreamObserver<GrpcClasses.Chat.Chat.ChatModel> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getFindByUserIdMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -332,8 +332,9 @@ public final class ChatsGrpc {
 
     /**
      */
-    public GrpcClasses.Chat.Chat.ChatModel findByUserId(GrpcClasses.Chat.Chat.lookUpByUserId request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public java.util.Iterator<GrpcClasses.Chat.Chat.ChatModel> findByUserId(
+        GrpcClasses.Chat.Chat.lookUpByUserId request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getFindByUserIdMethod(), getCallOptions(), request);
     }
   }
@@ -374,14 +375,6 @@ public final class ChatsGrpc {
         GrpcClasses.Chat.Chat.lookUpById request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteChatMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<GrpcClasses.Chat.Chat.ChatModel> findByUserId(
-        GrpcClasses.Chat.Chat.lookUpByUserId request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFindByUserIdMethod(), getCallOptions()), request);
     }
   }
 
