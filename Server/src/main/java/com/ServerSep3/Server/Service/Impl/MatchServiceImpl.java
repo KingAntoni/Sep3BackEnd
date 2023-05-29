@@ -56,14 +56,16 @@ public class MatchServiceImpl implements MatchService {
         List<MatchModel> resultList = new ArrayList<>();
         resultList.addAll(list1);
         resultList.addAll(list2);
-        for (int i=0; i<resultList.size();i++){
+        /*for (int i=0; i<resultList.size()-1;i++){
             if(resultList.get(i).getUserId1() == id && !(resultList.get(i).getMatchUser1()).equals("null")){
                     list1.remove(i);
             }
-            if(resultList.get(i).getUserId2() == id && !(resultList.get(i).getMatchUser2()).equals("null")){
-                    list1.remove(i);
-            }
         }
+       /* for (int i=0; i<resultList.size();i++){
+            if(resultList.get(i).getUserId2() == id && !(resultList.get(i).getMatchUser2()).equals("null")){
+                list1.remove(i);
+            }*/
+
         return resultList;
     }
 

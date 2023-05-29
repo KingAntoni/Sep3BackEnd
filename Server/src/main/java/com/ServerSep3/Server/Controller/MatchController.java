@@ -4,6 +4,8 @@ import com.ServerSep3.Server.Model.MatchModel;
 import com.ServerSep3.Server.Service.MatchService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/match")
 public class MatchController {
