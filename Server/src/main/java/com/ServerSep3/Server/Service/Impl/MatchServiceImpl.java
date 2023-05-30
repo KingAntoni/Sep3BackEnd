@@ -60,7 +60,7 @@ public class MatchServiceImpl implements MatchService {
             if(resultList.get(i).getUserId1() == id && !(resultList.get(i).getMatchUser1()).equals("null")){
                     list1.remove(i);
             }
-        }
+        }\
        /* for (int i=0; i<resultList.size();i++){
             if(resultList.get(i).getUserId2() == id && !(resultList.get(i).getMatchUser2()).equals("null")){
                 list1.remove(i);
